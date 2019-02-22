@@ -25,6 +25,8 @@ public class SpaceInvaders{
       else 
       {
         system.out.println("Invalid input, try again");
+        System.out.println("Move character (left 'a' or right 'd') or 'x' to quit game.");
+        input = input.nextLine();
       }
     }
     
