@@ -18,7 +18,7 @@ public class Board {
 				     };
 		String targetQuads[] = { "*", "*", "*", "*", "*",  "*", "*", "*", "*", "*",  " ", " ", " ", " ", " ",  " ", " ", " ", " ", " ",  " ", " ", " ", " ", " ",};
 
-		System.out.println("---*** TIC-TAC-TOE ***---");
+		System.out.println("Space Invaders");
 		while (a <= 9) {
 			// Resets boolean variables for each iteration
 			quadFound = false;
