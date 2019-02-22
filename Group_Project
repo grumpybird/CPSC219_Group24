@@ -1,5 +1,4 @@
-public class Group_Project {
-
+public class Controls {
   public static final int BOARD_WIDTH = 358;
     public static final int BOARD_HEIGHT = 350;
     public static final int GROUND = 290;
@@ -14,8 +13,9 @@ public class Group_Project {
     public static final int DELAY = 17;
     public static final int PLAYER_WIDTH = 15;
     public static final int PLAYER_HEIGHT = 10;
+ }
 
-}
+
 
 public class Avatar {
 } 
@@ -26,7 +26,6 @@ public class Obstacles {
 public class Points {
 }
 
-public class Controls {
-}
+
 
 
