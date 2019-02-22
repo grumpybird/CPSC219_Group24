@@ -27,10 +27,10 @@ public class Board {
 			// Alternate player turns
 			if (n % 2 == 0) {
 				player = "x";
-				System.out.println("It's your turn Player 1. (X)");
+				System.out.println("Which Quadrant do you want to move the ship?");
 			} else {
-				player = "o";
-				System.out.println("It's your turn Player 2. (O)");
+				player = "x";
+				System.out.println("Which Quadrant do you want to move the ship?");
 			}
 			// Input player quadrant
 			System.out.println("What quadrant do you want? (Q1-Q9)");
