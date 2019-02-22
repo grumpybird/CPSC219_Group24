@@ -8,7 +8,7 @@ public class Board {
 				     };
 		String targetQuads[] = { "*", "*", "*", "*", "*",  "*", "*", "*", "*", "*",  " ", " ", " ", " ", " ",  "-", " ", "-", " ", "-",  " ", " ", " ", " ", " ",};
 
-		System.out.println("Space Invaders");
+		System.out.println("       Space Invaders     ");
 			
 		// Prints array field
 		int i;
