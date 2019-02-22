@@ -17,5 +17,16 @@ public class Group_Project {
 
 }
 
-public class Alien {
+public class Avatar {
 } 
+
+public class Obstacles {
+}
+
+public class Points {
+}
+
+public class Controls {
+}
+
+
