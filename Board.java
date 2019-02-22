@@ -1,4 +1,9 @@
+import java.util.ArrayList;
+import java.util.Random; 
+
 public class Board {
+	private ArrayList<Obstacles> obstacles;
+	private Avatar avatar; 
  char[][] grid;
 	
 	public static void main(String[] args) {
