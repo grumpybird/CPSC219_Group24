@@ -5,9 +5,9 @@ public class Avatar {
   private String name;
   private char sprite;
   private int health;
-  private boolean alive;
   private Rectangle location;
 	
+	public 
   public void move(String direction){
  
   }
