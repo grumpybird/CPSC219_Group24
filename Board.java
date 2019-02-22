@@ -1,5 +1,5 @@
 public class Board {
-
+	// Citation https://gist.github.com/xSputnicKx/fbf9a329818cff0a4a02f773b22ed9a7?fbclid=IwAR0ojil66TCbkFd4DlJT5zh35pDCxidxa_RFCssuYXWBCaEO2bDXCSfzGk8
 	public static void main(String[] args) {
 
 	
@@ -10,12 +10,12 @@ public class Board {
 
 		System.out.println("Space Invaders");
 			
-			// Prints array field
-			int i;
-			for (i = 0; i < targetQuads.length; i++) {
-				System.out.print(targetQuads[i] + ",");
-				if ((i + 1) % 5 == 0)
-					System.out.println("");
+		// Prints array field
+		int i;
+		for (i = 0; i < targetQuads.length; i++) {
+			System.out.print(targetQuads[i] + ",");
+			if ((i + 1) % 5 == 0)
+				System.out.println("");
 			}
 			
 			
