@@ -25,7 +25,6 @@ public class SpaceInvaders{
       else 
       {
         system.out.println("Invalid input, try again");
-        input = input.nextLine();
       }
     }
     
