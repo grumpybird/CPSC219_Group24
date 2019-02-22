@@ -10,6 +10,10 @@ public class Avatar {
   public void move(String direction){
  
   }
+  public void updateHealth()
+ {
+ return health
+ }
   
   public Rectangle getLocation(){
 		return location;
