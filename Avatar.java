@@ -4,13 +4,23 @@ public class Avatar {
   
   private String name;
   private char sprite;
-  private int health;
+  private int lives;
   private Rectangle location;
 	
-	public 
-  public void move(String direction){
- 
+	public Avatar(){
+	name = "a";
+	sprite = 'o';
+	lives = 3
+	location = (2,4)
+	}
+	
+  public void moveRight(){
+		location.width += 1
   }
+	
+	public void moveLeft(){
+		location.width -= 1
+	}
   
   public Rectangle getLocation(){
 		return location;
