@@ -1,6 +1,11 @@
 public class Avatar {
   
-   public static final int BOARD_WIDTH = 358;
+  private String name;
+  private char sprite;
+  private int health;
+  
+  
+    public static final int BOARD_WIDTH = 358;
     public static final int BOARD_HEIGHT = 350;
     public static final int GROUND = 290;
     public static final int BOMB_HEIGHT = 5;
