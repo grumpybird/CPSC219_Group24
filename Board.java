@@ -13,7 +13,7 @@ public class Board {
 		// Prints array field
 		int i;
 		for (i = 0; i < targetQuads.length; i++) {
-			System.out.print(targetQuads[i] + ",");
+			System.out.print(targetQuads[i] + "      ");
 			if ((i + 1) % 5 == 0)
 				System.out.println("");
 			}
