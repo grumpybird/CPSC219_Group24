@@ -1,5 +1,4 @@
-# hello-world
-tutorial
+Project for Computer Science 219
+Group 24
 
-
-random message
+Animation game similar to "space invaders"
