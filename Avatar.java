@@ -5,7 +5,7 @@ public class Avatar {
   private String name;
   private char sprite;
   private int lives;
-  private Rectangle location;;
+  private Rectangle location;
 	
 	public Avatar(){
 	name = "a";
