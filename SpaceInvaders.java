@@ -1,34 +1,38 @@
 import java.util.Scanner;
 
-public class SpaceInvaders{
+public class SpaceInvaders {
   public static void main(String[] args){
+	System.out.println("       Space Invaders     ");
     Avatar a = new Avatar();
-    Scanner sc = new Scanner(System.in);
-    System.out.println("Move character (left 'a' or right 'd') or 'x' to quit game.");
-      input = input.nextLine();
-    while input != 'x';
+    Board b = new Board();
+    Scanner input = new Scanner(System.in);
+    String sc = "";
+    
+    while ((sc.equals("x") == false))
     {
-      System.out.println("Move character (left 'a' or right 'd') or 'x' to quit game.");
-      input = input.nextLine();
-        if (input == 'a')
+    	System.out.println("Move character (left 'a' or right 'd') or 'x' to quit game.");
+        sc = input.next();
+        
+        if (sc.equals("a"))
         {
-          a.moveLeft();
+          //a.moveLeft();
         } 
-       if (input == 'd')
+        else if (sc.equals("d")) 
         {
-          a.moveRight();
+          //a.moveRight();
         }
-      if (input == 'x')
+        else if (sc.equals("x")) 
         {
-          break;
+          System.out.println("Game over");
         }
         
-      else 
-      {
-        system.out.println("Invalid input, try again");
-        System.out.println("Move character (left 'a' or right 'd') or 'x' to quit game.");
-        input = input.nextLine();
-      }
+        else 
+	     {
+	        System.out.println("Invalid input, try again");
+	        
+	     }
+	       
+       
     }
     
                  
