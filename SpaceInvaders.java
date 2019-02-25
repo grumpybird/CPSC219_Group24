@@ -1,38 +1,54 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
 
-public class SpaceInvaders2 {
+public class SpaceInvaders {
 	
 	
   public static void main(String[] args) {
 	System.out.println("       Space Invaders     ");
 	
-	String targetQuads[] = { "*", "*", "*", "*", "*",  "*", "*", "*", "*", "*",  " ", " ", " ", " ", " ",  "-", " ", "-", " ", "-", " ", " ", "X ", " ", " ",};
-	
-	int i;
-	for (i = 0; i < targetQuads.length; i++) {
-		System.out.print(targetQuads[i] + "          ");
-		if ((i + 1) % 5 == 0)
-			System.out.println("");
-	}
-	
-    Avatar a = new Avatar();
-    Board b = new Board();
     Scanner input = new Scanner(System.in);
     String sc = "";
-  
-    while ((sc.equals("x") == false))
+	
+	int location = 22;
+	
+	ArrayList<String> myList = new ArrayList<String>();
+	
+	String[] targetQuads = { "*", "*", "*", "*", "*",  "*", "*", "*", "*", "*",  " ", " ", " ", " ", " ",  "-", " ", "-", " ", "-", " ", " ", "X", " ", " "};
+	
+	int i;
+	
+	for (i = 0; i < targetQuads.length; i++) {
+		myList.add(targetQuads[i]);
+	}
+
+	while ((sc.equals("x") == false))
     {
     	System.out.println("Move character (left 'a' or right 'd') or 'x' to quit game.");
         sc = input.next();
         
         if (sc.equals("a"))
         {
-          a.moveLeft();
+			Collections.swap(myList, location, location - 1);
+			location = location - 1;
+			for (i = 0; i < myList.size(); i++) {
+				System.out.print(myList.get(i) + "          ");
+				if ((i + 1) % 5 == 0){
+					System.out.println("");
+				}
+			}
         } 
         else if (sc.equals("d")) 
         {
-          a.moveRight();
+			Collections.swap(myList, location, location + 1);
+			location = location + 1;
+			for (i = 0; i < myList.size(); i++) {
+				System.out.print(myList.get(i) + "          ");
+				if ((i + 1) % 5 == 0){
+					System.out.println("");
+				}
+			}
         }
         else if (sc.equals("x")) 
         {
@@ -47,9 +63,6 @@ public class SpaceInvaders2 {
 	       
        
     }
-    
-                 
-  
   }
 }
 
