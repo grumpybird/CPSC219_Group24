@@ -30,24 +30,36 @@ public class SpaceInvaders {
         
         if (sc.equals("a"))
         {
-			Collections.swap(myList, location, location - 1);
-			location = location - 1;
-			for (i = 0; i < myList.size(); i++) {
-				System.out.print(myList.get(i) + "          ");
-				if ((i + 1) % 5 == 0){
-					System.out.println("");
+        	if (location > 20) {
+				Collections.swap(myList, location, location - 1);
+				location = location - 1;
+				for (i = 0; i < myList.size(); i++) {
+					System.out.print(myList.get(i) + "          ");
+					if ((i + 1) % 5 == 0){
+						System.out.println("");
+					}
 				}
+        	}
+        	else
+			{
+				System.out.println("Sorry can't move farther left.");
 			}
         } 
         else if (sc.equals("d")) 
         {
-			Collections.swap(myList, location, location + 1);
-			location = location + 1;
-			for (i = 0; i < myList.size(); i++) {
-				System.out.print(myList.get(i) + "          ");
-				if ((i + 1) % 5 == 0){
-					System.out.println("");
+        	if (location < 24) {
+				Collections.swap(myList, location, location + 1);
+				location = location + 1;
+				for (i = 0; i < myList.size(); i++) {
+					System.out.print(myList.get(i) + "          ");
+					if ((i + 1) % 5 == 0){
+						System.out.println("");
+					}
 				}
+        	}
+        	else
+			{
+				System.out.println("Sorry can't move farther left.");
 			}
         }
         else if (sc.equals("x")) 
