@@ -1,5 +1,20 @@
+/**
+ * 
+ *
+ *
+ *
+ *
+ */
+
 import java.awt.Rectangle;
 
+/**
+ * 
+ *
+ *
+ *
+ *
+ */
 public class Avatar {
   
  	private String name;
