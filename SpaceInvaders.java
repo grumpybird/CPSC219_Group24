@@ -112,7 +112,7 @@ public class SpaceInvaders {
         	}
         	else
 			{
-				System.out.println("Sorry can't move farther left.");
+				System.out.println("Sorry can't move farther right.");
 			}
         }
         else if (sc.equals("x")) 
