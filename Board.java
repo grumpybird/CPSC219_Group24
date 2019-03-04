@@ -16,9 +16,6 @@
  *
  */
 
-
-import java.util.ArrayList;
-
 /**
  * Represents the game board.
  * Not developed fully for demo 1, instead used as a starting point.
@@ -32,31 +29,11 @@ import java.util.ArrayList;
  *
  */
 public class Board {
-		//CODE USED AND MODIFIED TO DEVELOP THIS PART OF THE PROGRAM. SEE TOP OF THE FILE FOR ORIGINAL CODE URL.
-
-		String quadrants[] = { "Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10", "Q11", "Q12", "Q13",
-				      "Q14", "Q15", "Q16", "Q17", "Q18", "Q19", "Q20", "Q21", "Q22" , "Q23", "Q24", "Q25"
-				     };
-		String targetQuads[] = { "*", "*", "*", "*", "*",  "*", "*", "*", "*", "*",  " ", " ", " ", " ", " ",  "-", " ", "-", " ", "-", " ", " ", "X ", " ", " ",};
 	
-		// adds the spaceship
-		
-		
-		// Prints array field
-		public String drawBoard()
-		{
-		int i;
-		for (i = 0; i < targetQuads.length; i++) {
-			System.out.print(targetQuads[i] + "          ");
-			if ((i + 1) % 5 == 0)
-				System.out.println("");
-		}
-		public String getBoard() {
-			return targetQuads;
-		}
-			
+	final int BOARD_WIDTH;
+	final int BOARD_HEIGHT;
 	
-			
-		}
+	public Board drawBoard(board){
 		
+	}
 }
