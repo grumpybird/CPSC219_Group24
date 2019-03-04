@@ -33,7 +33,11 @@ public class Board {
 	final int BOARD_WIDTH;
 	final int BOARD_HEIGHT;
 	
+	public void Board(){
+	
+	}
+	
 	public Board drawBoard(board){
-		
+		return board;
 	}
 }
