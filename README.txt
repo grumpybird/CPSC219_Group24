@@ -19,13 +19,13 @@ To locate demo1, you will have to go to SpaceInvaders.java in our repository and
 
 Referenced to develop code:
 
-(1) Space Invaders an Accelerated Tutorial:
+(1) Space Invaders an Accelerated Tutorial: Accessed Monday January 25th, 2019.
 http://www.cokeandcode.com/info/tut2d.html?fbclid=IwAR3sCqHy-sJhQbDlU632HTuKlMD44M0nonQxzfUlZQPRz6Dw88MLenVhQJc
 
-(2) Space Invaders clone tutorial:
+(2) Space Invaders clone tutorial: Accessed Monday January 25th, 2019.
 http://zetcode.com/tutorials/javagamestutorial/spaceinvaders/?fbclid=IwAR3vAz1YxWej1MDVjSO7J6KC3evf57nWm-iQYQcRNfFcOvcHL4u8DLic0TQ
 
-(3) TicTacToe Game made in Java for Eclipse IDE by Benjamin Pottinger:
+(3) TicTacToe Game made in Java for Eclipse IDE by Benjamin Pottinger: Accessed Monday January 25th, 2019.
 https://gist.github.com/xSputnicKx/fbf9a329818cff0a4a02f773b22ed9a7?fbclid=IwAR0ojil66TCbkFd4DlJT5zh35pDCxidxa_RFCssuYXWBCaEO2bDXCSfzGk8
 
 (4) Lectures and materials from Course (CPSC 219) Instructor: Nathaly Verwaal 
