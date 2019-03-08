@@ -15,3 +15,27 @@ The alien,shield and avatar objects are stored in a 5x5 2D array [row][col] list
 The GITHUB link respitory link: https://github.com/grumpybird/CPSC219_Group24.git
 
 To locate demo1, you will have to go to SpaceInvaders.java in our repository and then download the file and compile it through command javac and after compilation run program with java SpaceInvaders in console. Or in eclipse by downloading file and running it. 
+
+
+Referenced to develop code:
+
+(1) Space Invaders an Accelerated Tutorial:
+http://www.cokeandcode.com/info/tut2d.html?fbclid=IwAR3sCqHy-sJhQbDlU632HTuKlMD44M0nonQxzfUlZQPRz6Dw88MLenVhQJc
+
+(2) Space Invaders clone tutorial:
+http://zetcode.com/tutorials/javagamestutorial/spaceinvaders/?fbclid=IwAR3vAz1YxWej1MDVjSO7J6KC3evf57nWm-iQYQcRNfFcOvcHL4u8DLic0TQ
+
+(3) TicTacToe Game made in Java for Eclipse IDE by Benjamin Pottinger:
+https://gist.github.com/xSputnicKx/fbf9a329818cff0a4a02f773b22ed9a7?fbclid=IwAR0ojil66TCbkFd4DlJT5zh35pDCxidxa_RFCssuYXWBCaEO2bDXCSfzGk8
+
+(4) Lectures and materials from Course (CPSC 219) Instructor: Natalie Verwaal 
+
+(5) Code from TicTacToe Example in Lecture to develop board and board class.
+
+(6) Knowledge and course material gathered from current course CPSC 219: Intro to Computer Science for Multidisciplinary Studies II
+
+(7) Knowledge and course material gathered from previous course  CPSC 217: Intro to Computer Science for Multidisciplinary Studies I
+
+(6) Java Official Oracle documentation.
+
+(7) StackOverflow to solve syntax and logic errors during development for java.
