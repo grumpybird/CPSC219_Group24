@@ -28,7 +28,7 @@ http://zetcode.com/tutorials/javagamestutorial/spaceinvaders/?fbclid=IwAR3vAz1Yx
 (3) TicTacToe Game made in Java for Eclipse IDE by Benjamin Pottinger:
 https://gist.github.com/xSputnicKx/fbf9a329818cff0a4a02f773b22ed9a7?fbclid=IwAR0ojil66TCbkFd4DlJT5zh35pDCxidxa_RFCssuYXWBCaEO2bDXCSfzGk8
 
-(4) Lectures and materials from Course (CPSC 219) Instructor: Natalie Verwaal 
+(4) Lectures and materials from Course (CPSC 219) Instructor: Nathaly Verwaal 
 
 (5) Code from TicTacToe Example in Lecture to develop board and board class.
 
