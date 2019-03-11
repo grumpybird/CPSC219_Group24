@@ -1,3 +1,9 @@
+/*###################################################################################################################################
+Avatar class needs to import an image which we will use as the playable object, needs methods using events to move back and forth
+along an hbox on the bottom of the stage, events which launch a projectile. Also discuss if the projectiles used by the player and
+the enemy aliens is the same, in which case it might be better to use a projectile class
+###################################################################################################################################*/
+
 /**
  * CPSC 219 Group 24 Project: Avatar Class
  * 
