@@ -8,4 +8,6 @@ import javafx.scene.image
 public class Aliens{
   FileInputStream inputstream = new FileInputStream("alien.jpg");
   Image image = new Image(inputstream); 
+  
+  
 }
