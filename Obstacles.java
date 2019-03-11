@@ -28,8 +28,10 @@ a potential projectiles class
  * Methods will track damage, collision counter, etc. 
  *
  */
+
+https://stackoverflow.com/questions/27359758/detect-collision-in-simple-space-invaders 
 public class Obstacles {
-  private int barrierHealth = 0;
+  private int barrierHealth = 12;
   private int counter = 0;
   private ArrayList<Barrier> barriers = new ArrayList<>();
 
@@ -43,15 +45,30 @@ public class Obstacles {
   }
   
   public void setbarrierHealth(int barrierHealth) {
-    while counter <= 12 
+    while counter > 0
       if (b.collision = true)
-      { counter += 1; 
+      { counter -= 1; 
       } 
+    else if counter = 0
+    {
+      barrier = false
+      
+     
   }
+  public boolean barrierDisplay () {
+    if (barrierDisplay = true)
+    {
+      display barrier
+    }
+    else
+    {
+      bye barrier
+    }
   
   public getbarrierHealth() {
     return barrierHealth;
   }
+  
   
   public void checkBarrierCollision(Barrier barrier) {
      for (int b = 0; b < barrier.getBarrierHit(); b++)
