@@ -1,3 +1,8 @@
+/*##################################################################################################################################
+Board class will use the height and width to create a central space. The stage itself will be located in the SpaceInvaders class, but
+all methods relating to the board itself will be here. Needs methods to draw the board, with the correct size, colour, etc.
+##################################################################################################################################*/
+
 /**
  * CPSC 219 Group 24 Project: Board Class
  * 
