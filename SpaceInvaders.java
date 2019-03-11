@@ -17,15 +17,44 @@
  */
 
 
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Collections;
+import javafx.animation.AnimationTimer;
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.KeyCode;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.scene.Node;
 
 public class SpaceInvaders extends Application {
+
+	public static final double BOARD_WIDTH = 800;
+	public static final double BOARD_HEIGHT = 600;
 	
 	public void start(Stage primaryStage){
-		setStage();
-		setGUI();
+		primaryStage.setTitle("Space Invaders");
+		Group root = new Group();
+
+		Scene mainScene = new Scene(root, BOARD_WIDTH, BOARD_HEIGHT, Color.BLACK);
+		mainScene.setFill(Color.BLACK);
+
+		Canvas canvas = new Canvas(BOARD_WIDTH, BOARD_HEIGHT);
+		GraphicsContext gc = canvas.getGraphicsContext2D();
+
+		root.getChildren().add(canvas);
+		primaryStage.show();
+	}
+
+	public static void main(String[] args){
+		launch(args);
+		Board board = new Board();
 	}
 }
 

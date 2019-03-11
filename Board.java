@@ -30,41 +30,29 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.scene.Node
+import javafx.scene.Node;
 
-public class Board extends Application {
+public class Board {
 	
 	public static final double BOARD_WIDTH = 800;
 	public static final double BOARD_HEIGHT = 600;
-	
-	public void setBoard(){
-		primaryStage.setTitle("Space Invaders");
-		primaryStage.setResizeable(false);
-		Group root = new Group();
-		
-		Scene mainScene = new Scene(root, BOARD_WIDTH, BOARD_HEIGHT, Color.BLACK);
-		mainScene.setFill(Color.BLACK);
 
-		Canvas canvas = new Canvas(BOARD_WIDTH, BOARD_HEIGHT);
-		GraphicsContext gc = canvas.getGraphicsContext2D();
- 
-		root.getChildren().add(canvas);
-		
+	public void Board(){
+		setGUI();
 	}
 	
 	public void setGUI() {
-        	Text playerScore = new Text("SCORE: " + getScore());
+		Text playerScore = new Text("SCORE: ");
 		playerScore.setFill(Color.LIMEGREEN);
 		playerScore.setFont(Font.font("Monaco", FontWeight.EXTRA_BOLD, 20));
-		playerScore.setX();
-		playerScore.setY();
+		playerScore.setX(100);
+		playerScore.setY(100);
 		
-		Text playerLives = new Text("LIVES: " + getLives());
+		Text playerLives = new Text("LIVES: ");
 		playerLives.setFill(Color.LIMEGREEN);
 		playerScore.setFont(Font.font("Monaco", FontWeight.EXTRA_BOLD, 20));
-		playerLives.setX();
-		playerLives.setY();
-		
-		root.getChildren().add(playerScore, playerLives);
+		playerLives.setX(200);
+		playerLives.setY(100);
+
     	}
 }
