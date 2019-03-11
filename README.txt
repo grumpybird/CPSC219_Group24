@@ -19,13 +19,13 @@ To locate demo1, you will have to go to SpaceInvaders.java in our repository and
 
 Referenced to develop code:
 
-(1) Space Invaders an Accelerated Tutorial: Accessed Monday January 25th, 2019.
+(1) Space Invaders an Accelerated Tutorial: Accessed Monday February 25th, 2019.
 http://www.cokeandcode.com/info/tut2d.html?fbclid=IwAR3sCqHy-sJhQbDlU632HTuKlMD44M0nonQxzfUlZQPRz6Dw88MLenVhQJc
 
-(2) Space Invaders clone tutorial: Accessed Monday January 25th, 2019.
+(2) Space Invaders clone tutorial: Accessed Monday February 25th, 2019.
 http://zetcode.com/tutorials/javagamestutorial/spaceinvaders/?fbclid=IwAR3vAz1YxWej1MDVjSO7J6KC3evf57nWm-iQYQcRNfFcOvcHL4u8DLic0TQ
 
-(3) TicTacToe Game made in Java for Eclipse IDE by Benjamin Pottinger: Accessed Monday January 25th, 2019.
+(3) TicTacToe Game made in Java for Eclipse IDE by Benjamin Pottinger: Accessed Monday February 25th, 2019.
 https://gist.github.com/xSputnicKx/fbf9a329818cff0a4a02f773b22ed9a7?fbclid=IwAR0ojil66TCbkFd4DlJT5zh35pDCxidxa_RFCssuYXWBCaEO2bDXCSfzGk8
 
 (4) Lectures and materials from Course (CPSC 219) Instructor: Nathaly Verwaal 
@@ -39,3 +39,14 @@ https://gist.github.com/xSputnicKx/fbf9a329818cff0a4a02f773b22ed9a7?fbclid=IwAR0
 (6) Java Official Oracle documentation.
 
 (7) StackOverflow to solve syntax and logic errors during development for java.
+
+DEMO 2:
+
+For DEMO 2 we are making the GUI for our Space Invaders game. We will also stop running everything form the SpaceInvaders.java file and instead use various classes for each attribute of the game. 
+The main file will be SpaceInvaders.java, this will be the file that starts, manages and quits the game. It will also call the other classes and get information back from them to determine the status of all objects on the board, as well as, update the displayed information accordingly.
+ 
+
+FOR DEMO #2 REFERENCE USED:
+
+(8) SpaceInvadersFx Java program w/ JavaFx by tonysaavedra: Accessed March 11th, 2019.
+https://github.com/ajsaavedra/SpaceInvadersFX/blob/master/src/com/tonyjs/spaceinvadersfx/SpaceInvadersFX.java?fbclid=IwAR3AcB9vlOk-X9vefARmNS2MSdIlTWzpVsenYw7k7GC2kHGGmNRPvMxmT34
