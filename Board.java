@@ -21,30 +21,45 @@ all methods relating to the board itself will be here. Needs methods to draw the
 /**
  *
  */
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.application.Platform;
+import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.KeyCode;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
+import javafx.scene.Node
 
 public class Board extends Application {
 	
 	public static final int BOARD_WIDTH;
 	public static final int BOARD_HEIGHT;
 	
-	public void start(Stage primaryStage) {
-        Label score = new Label("SCORE: " + getScore());
-	Label lives = new Label("LIVES: " + getLives());
-        primaryStage.setScene(new Scene(label, 300, 250));
-        primaryStage.setTitle("Space Invaders");
-        primaryStage.show();
-    	}
+	public void setBoard(){
 	
-	public Board drawBoard(board){
-		return board;
 	}
+	
+	public void setGUI() {
+        	Text playerScore = new Text("SCORE: " + getScore());
+		playerScore.setFill(Color.LIMEGREEN);
+		playerScore.setFont(Font.font("Monaco", FontWeight.EXTRA_BOLD, 20));
+		playerScore.setX();
+		playerScore.setY();
+		
+		Text playerLives = new Text("LIVES: " + getLives());
+		playerLives.setFill(Color.LIMEGREEN);
+		playerScore.setFont(Font.font("Monaco", FontWeight.EXTRA_BOLD, 20));
+		playerLives.setX();
+		playerLives.setY();
+		
+        	primaryStage.setScene(new Scene(label, 300, 250));
+        	primaryStage.setTitle("Space Invaders");
+    	}
 }
