@@ -5,8 +5,48 @@ with the object theyve collided with, ie losing a life or removing an alien from
 class determines an instance of itself has collided with an object of another class, call a method from that class which will contain
 the appropriate action
 #####################################################################################################################################*/
+import java.awt.Rectangle;
 
 public class Projectile{
   
+  //instance variables:
+  
   public final int SPEED;
+  
+  //constructors:
+  
+  //accessor methods:
+  public rectangle getLocationX(){
+    return 0.0;
+  }
+  
+  public rectangle getLocationY(){
+    
+    return 0.0;
+  }
+  /**
+   * While 
+   *
+   *
+   *
+   *
+   *
+   * */
+  public void checkCollision(){
+    if (avatar.getLocationX()==projectile.getLocation && avatar.getLocationY()==projectile.getLocationY()){
+      avatar.collision();
+    } else if (obstacle.getLocation()==projectile.getLocationX && obstacle.getLocationY()==projectile.getLocationY()
+    {
+      obstacle.collision();
+    } else if (alien.getLocationX()==projectile.getLocationX && alien.getLocationY()==projectile.getLocationY(){
+      alien.collision();
+    }
+  
+  //mutator methods:
+  public void shot(){
+  }
+  
+  
+  
+  
 }
