@@ -50,3 +50,9 @@ FOR DEMO #2 REFERENCE USED:
 
 (8) SpaceInvadersFx Java program w/ JavaFx by tonysaavedra: Accessed March 11th, 2019.
 https://github.com/ajsaavedra/SpaceInvadersFX/blob/master/src/com/tonyjs/spaceinvadersfx/SpaceInvadersFX.java?fbclid=IwAR3AcB9vlOk-X9vefARmNS2MSdIlTWzpVsenYw7k7GC2kHGGmNRPvMxmT34
+
+(9) SpaceInvadersApp.java by Almas Baimagambetov: Accessed March 11th, 2019.
+https://github.com/AlmasB/FXTutorials/blob/master/src/com/almasb/invaders/SpaceInvadersApp.java
+
+(10) Space Invaders - Moving The Bullet: Accessed March 11th, 2019.
+https://www.dreamincode.net/forums/topic/201658-space-invaders-moving-the-bullet/
