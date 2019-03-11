@@ -1,4 +1,9 @@
- /**
+/* ####################################################################################################################################
+use this class to draw the stage and execute the javafx application. Not a lot going on in this class, just the main() method and
+pulling all the other classes together
+####################################################################################################################################*/
+
+/**
  * CPSC 219 Group 24 Project: Board Class
  * 
  * @author: Paula Almeida
