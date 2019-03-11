@@ -1,8 +1,3 @@
-/*##################################################################################################################################
-Board class will use the height and width to create a central space. The stage itself will be located in the SpaceInvaders class, but
-all methods relating to the board itself will be here. Needs methods to draw the board, with the correct size, colour, etc.
-##################################################################################################################################*/
-
 /**
  * CPSC 219 Group 24 Project: Board Class
  * 
@@ -39,11 +34,22 @@ import javafx.scene.Node
 
 public class Board extends Application {
 	
-	public static final int BOARD_WIDTH;
-	public static final int BOARD_HEIGHT;
+	public static final double BOARD_WIDTH = 800;
+	public static final double BOARD_HEIGHT = 600;
 	
 	public void setBoard(){
-	
+		primaryStage.setTitle("Space Invaders");
+		primaryStage.setResizeable(false);
+		Group root = new Group();
+		
+		Scene mainScene = new Scene(root, BOARD_WIDTH, BOARD_HEIGHT, Color.BLACK);
+		mainScene.setFill(Color.BLACK);
+
+		Canvas canvas = new Canvas(BOARD_WIDTH, BOARD_HEIGHT);
+		GraphicsContext gc = canvas.getGraphicsContext2D();
+ 
+		root.getChildren().add(canvas);
+		
 	}
 	
 	public void setGUI() {
@@ -59,7 +65,6 @@ public class Board extends Application {
 		playerLives.setX();
 		playerLives.setY();
 		
-        	primaryStage.setScene(new Scene(label, 300, 250));
-        	primaryStage.setTitle("Space Invaders");
+		root.getChildren().add(playerScore, playerLives);
     	}
 }
