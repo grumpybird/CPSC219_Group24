@@ -33,36 +33,39 @@ https://stackoverflow.com/questions/27359758/detect-collision-in-simple-space-in
 public class Obstacles {
   private int barrierHealth = 12;
   private int counter = 0;
-  private ArrayList<Barrier> barriers = new ArrayList<>();
 
   
   public void setBarriersLocation() {
+    board.location() = barrier.location();
+    
     // CALLS BOARD TO FIND LOCATION 
     
   }
   
-  public getBarrierHit() {
+  public boolean getBarrierHit() {
+    //call Paula's collision for barrier
+    //return true if hit collision return false elsewise;
   }
   
   public void setbarrierHealth(int barrierHealth) {
     while counter > 0
-      if (b.collision = true)
+      if (getBarrierHit = true)
       { counter -= 1; 
       } 
     else if counter = 0
     {
-      barrier = false
+      getBarrierHit = false
       
      
   }
   public boolean barrierDisplay () {
-    if (barrierDisplay = true)
+    if (barrierHealth > 12)
     {
-      display barrier
+      return true;
     }
     else
     {
-      bye barrier
+      return false;
     }
   
   public getbarrierHealth() {
@@ -70,24 +73,6 @@ public class Obstacles {
   }
   
   
-  public void checkBarrierCollision(Barrier barrier) {
-     for (int b = 0; b < barrier.getBarrierHit(); b++)
-          barrier.getProjectile(b).detectCollision(alien);
-    
-     if (barrier.isActive() == true && alien.isActive())
-                {
-                    barrier.detectCollision(alien);
-                }   
-            }
-            else if (alien.isActive() == false)
-            {
-                totalscore = totalscore + avatar.GetScore();
-            }
-        }
 
-
-
-      
-  } 
 
 }
