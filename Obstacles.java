@@ -1,8 +1,3 @@
-/*######################################################################################################################################
-Use hboxes to draw a solid square, and give them a certain number of health points in an instance 
-variable. We need to decide if we want the event for a collision between the projectile and the obstacles to be in the obstacles or
-a potential projectiles class
-######################################################################################################################################*/
 
 /**
  * CPSC 219 Group 24 Project: Obstacles Class
