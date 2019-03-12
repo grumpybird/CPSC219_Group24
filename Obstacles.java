@@ -33,6 +33,7 @@ https://stackoverflow.com/questions/27359758/detect-collision-in-simple-space-in
 public class Obstacles {
   private int barrierHealth = 12;
   private int counter = 0;
+  private boolean barrierHit;
 
   
   public void setBarriersLocation() {
@@ -43,8 +44,14 @@ public class Obstacles {
   }
   
   public boolean getBarrierHit() {
-    //call Paula's collision for barrier
-    //return true if hit collision return false elsewise;
+    if (obstacle.collision() = true)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
   }
   
   public void setbarrierHealth(int barrierHealth) {
