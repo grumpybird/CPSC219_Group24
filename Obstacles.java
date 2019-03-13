@@ -32,9 +32,18 @@ public class Obstacles {
 
   
   public void setBarriersLocation() {
-    board.location() = barrier.location();
-    
-    // CALLS BOARD TO FIND LOCATION 
+    // https://github.com/leonardo-ono/Java2DSpaceInvaders/blob/master/src/br/ol/spaceinvaders/SpaceInvadersGame.java
+        for (int id = 0; id < 4; id++) {
+            for (int row = 0; row < 4; row++) {
+                for (int col = 0; col < 3; col++) {
+                    if (col == 1 && row == 3) {
+                        continue;
+                    }
+                    Shield shield = new Shield(id, col, row);
+                    SpaceInvaders.add(shield);
+                }
+            }
+        }
     
   }
   
