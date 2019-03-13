@@ -62,3 +62,6 @@ https://gamedevelopment.tutsplus.com/tutorials/introduction-to-javafx-for-game-d
 
 (12) SpaceInvaders Barrier Image: Accessed March 13, 2019.
 http://s323.photobucket.com/user/tater8q3/media/Barrier.png.html
+
+(13) Bullet png. Accessed: March 13, 2019.
+http://pluspng.com/png-5832.html
