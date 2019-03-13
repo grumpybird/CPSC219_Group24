@@ -7,8 +7,13 @@ the appropriate action
 #####################################################################################################################################*/
 import java.awt.Rectangle;
 
-public class Projectile{
+public class Projectile extends SpaceInvaders{
   
+  
+   //Creating an image 
+   Image bullet = new Image(new FileInputStream("bullet.jpg"))
+   
+   //
   //instance variables:
   
   public final int SPEED;
