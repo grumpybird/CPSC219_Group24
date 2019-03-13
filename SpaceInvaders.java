@@ -35,27 +35,36 @@ import javafx.scene.Node;
 
 public class SpaceInvaders extends Application {
 
-	public static final double BOARD_WIDTH = 800;
-	public static final double BOARD_HEIGHT = 600;
-	
-	public void start(Stage primaryStage){
-		primaryStage.setTitle("Space Invaders");
-		Group root = new Group();
+    public static final double BOARD_WIDTH = 800;
+    public static final double BOARD_HEIGHT = 600;
 
-		Scene mainScene = new Scene(root, BOARD_WIDTH, BOARD_HEIGHT, Color.BLACK);
-		mainScene.setFill(Color.BLACK);
+    public static void main(String[] args){
+        launch(args);
+    }
 
-		Canvas canvas = new Canvas(BOARD_WIDTH, BOARD_HEIGHT);
-		GraphicsContext gc = canvas.getGraphicsContext2D();
+    public void start(Stage primaryStage){
 
-		root.getChildren().add(canvas);
-		primaryStage.show();
-	}
+        primaryStage.setTitle("Space Invaders");
 
-	public static void main(String[] args){
-		launch(args);
-		Board board = new Board();
-	}
+        Group root = new Group();
+        Scene boardScene = new Scene(root);
+        primaryStage.setScene(boardScene);
+
+        Canvas canvas = new Canvas(BOARD_WIDTH, BOARD_HEIGHT);
+        root.getChildren().add(canvas);
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+
+        gc.setFill(Color.BLACK);
+        gc.fillRect(0, 0, BOARD_WIDTH, BOARD_HEIGHT);
+
+        gc.setFill(Color.LIMEGREEN);
+        Font theFont = Font.font("Comic Sans MS", 24);
+        gc.setFont(theFont);
+        gc.fillText("LIVES: ", 100, 25);
+        gc.fillText("SCORE: ", 500, 25);
+
+        primaryStage.show();
+    }
 }
 
 

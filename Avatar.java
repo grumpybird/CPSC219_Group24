@@ -1,9 +1,3 @@
-/*###################################################################################################################################
-Avatar class needs to import an image which we will use as the playable object, needs methods using events to move back and forth
-along an hbox on the bottom of the stage, events which launch a projectile. Also discuss if the projectiles used by the player and
-the enemy aliens is the same, in which case it might be better to use a projectile class
-###################################################################################################################################*/
-
 /**
  * CPSC 219 Group 24 Project: Avatar Class
  * 
@@ -19,8 +13,23 @@ the enemy aliens is the same, in which case it might be better to use a projecti
  *
  */
 
-import java.awt.Rectangle;
-
+import javafx.animation.AnimationTimer;
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.KeyCode;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.scene.Node;
+import javafx.event.Event;
+import javafx.scene.input.KeyEvent;
 
 /**
  * Class represents the avatar in the game.
@@ -36,51 +45,51 @@ import java.awt.Rectangle;
 public class Avatar {
 	
   	//Instance Variables:
- 	private String name;
-  	private char sprite;
- 	private int lives;
-  	private Rectangle location;
-	
-	//Constructor:
-	/**
-	 * Initiates name variable to be compatible with other classes in the program.
-	 * Sets default location when starting a game to instance variable.
-	 * Sets the appropriate number of lives to the avatar.
-	 */
+ 	private boolean alive = True;
+ 	private int lives = 3;
+ 	private int locationX;
+ 	private int locationY;
+
+ 	public static final int INITIAL_X;
+ 	public static final int INITIAL_Y;
+
+  	FileInputStream alienInput = new FileInputStream("CPSC219_Group24/alien.png" );
+	private Image alien = new Image(alienInput);
+
+	FileInputStream spriteInput = new FileInputStream("CPSC219_Group24/sprite.png");
+	private Image sprite = new Image(spriteInput);
+
 	public Avatar(){
-		name = "a";
-		sprite = 'o';
-		lives = 3;
-		location = new Rectangle(2,4);
+
 	}
-	
-	// Mutator Methods:
-	/**
-	 * Moves the avatar one position to the right from 
-	 * the position where the avatar was positioned when
-	 * the method was invoked. 
-	 * Takes no parameters.
-	 */
-	public void moveRight(){
-		location.width += 1;
-	}
-	
-	/**
-	 * Moves the avatar one position to the left from 
-	 * the position where the avatar was positioned when
-	 * the method was invoked.  
-	 * Takes no parameters.
-	 */
+
 	public void moveLeft(){
-		location.width -= 1;
+	    EventHandler<KeyEvent> moveLeft = new EventHandler<KeyEvent>(){
+
+        }
 	}
-	
-  // Accessor methods:	
-  /**
-   * Retrieves and returns location of the avatar at the time when the method was called.
-   * @return location - the avatar's position as a rectangle.
-   */
-  public Rectangle getLocation(){
-		return location;
-  }
+
+	public void moveRight(){
+
+	}
+
+	public void avatarCollision(){
+
+	}
+
+	public int getLocationX(){
+		return locationX;
+	}
+
+	public int getLocationY(){
+		return locationY;
+	}
+
+	public void setLocationX(amount){
+		locationX += amount;
+	}
+
+	public void setLocationY(amount){
+		locationY += amount;
+	}
 } 
