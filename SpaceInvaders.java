@@ -1,6 +1,6 @@
 /**
  * CPSC 219 Group 24 Project: Board Class
- * 
+ *
  * @author: Paula Almeida
  *	    Gabriel Atienza
  *	    Sharon Chan
@@ -33,13 +33,20 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
+import javafx.event.EventHandler;
+
+import java.util.HashSet;
 
 public class SpaceInvaders extends Application {
 
-    public static final double BOARD_WIDTH = 800;
-    public static final double BOARD_HEIGHT = 600;
-    public static final double AVATAR_START_X = ((BOARD_WIDTH / 2) - 37.5);
-   
+    private static final double BOARD_WIDTH = 800;
+    private static final double BOARD_HEIGHT = 600;
+
+    private static HashSet<String> currentlyActiveKeys;
+    private static Scene boardScene;
+    private static Avatar player;
+    private static GraphicsContext gc;
 
     public static void main(String[] args){
         launch(args);
@@ -50,12 +57,12 @@ public class SpaceInvaders extends Application {
         primaryStage.setTitle("Space Invaders");
 
         Group root = new Group();
-        Scene boardScene = new Scene(root, BOARD_WIDTH, BOARD_HEIGHT);
+        boardScene = new Scene(root, BOARD_WIDTH, BOARD_HEIGHT);
         primaryStage.setScene(boardScene);
 
         Canvas canvas = new Canvas(BOARD_WIDTH, BOARD_HEIGHT);
         root.getChildren().add(canvas);
-        GraphicsContext gc = canvas.getGraphicsContext2D();
+        gc = canvas.getGraphicsContext2D();
 
         gc.setFill(Color.BLACK);
         gc.fillRect(0, 0, BOARD_WIDTH, BOARD_HEIGHT);
@@ -66,16 +73,61 @@ public class SpaceInvaders extends Application {
         gc.fillText("LIVES: ", 100, 25);
         gc.fillText("SCORE: ", 500, 25);
 
-        Image sprite = new Image("sprite.png");
-        gc.drawImage(sprite, AVATAR_START_X, 550, 75, 50);
-        
         Image barrier = new Image("Barrier.png");
         gc.drawImage(barrier, 400,500);
-            //for (id = 1; id < 4; id++) {
-                    //if (col == 1 && row == 3) {
+        //for (id = 1; id < 4; id++) {
+        //if (col == 1 && row == 3) {
+
+        player = new Avatar();
+        player.drawAvatar(gc);
 
         primaryStage.show();
     }
+
+    public static void PrepareActionHandler(){
+
+        currentlyActiveKeys = new HashSet<String>();
+
+        boardScene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            public void handle(KeyEvent event) {
+                currentlyActiveKeys.add(event.getCode().toString());
+            }
+        });
+
+        boardScene.setOnKeyReleased(new EventHandler<KeyEvent>() {
+            public void handle(KeyEvent event) {
+                currentlyActiveKeys.remove(event.getCode().toString());
+            }
+        });
+    }
+
+    public static void actionHandler(){
+
+        if (currentlyActiveKeys.contains("A")){
+            player.moveLeft();
+            player.drawAvatar(gc);
+        }
+
+        else{
+
+        }
+
+        if (currentlyActiveKeys.contains("RIGHT")){
+            player.moveRight();
+            player.drawAvatar(gc);
+        }
+
+        else{
+
+        }
+
+        if (currentlyActiveKeys.contains("SPACE")){
+
+        }
+
+        else{
+
+        }
+    }
+
 }
-
-
