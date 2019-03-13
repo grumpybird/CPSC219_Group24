@@ -56,3 +56,6 @@ https://github.com/AlmasB/FXTutorials/blob/master/src/com/almasb/invaders/SpaceI
 
 (10) Space Invaders - Moving The Bullet: Accessed March 11th, 2019.
 https://www.dreamincode.net/forums/topic/201658-space-invaders-moving-the-bullet/
+
+(11) Introduction to JavaFX for game development: Accessed March 12th & 13th, 2019.
+https://gamedevelopment.tutsplus.com/tutorials/introduction-to-javafx-for-game-development--cms-23835?fbclid=IwAR12HZJYDyIkOlPnMyq1zEHVuX2UhoqgjZRY8EDqa6TpMYXr_hDkS3SxoCA
