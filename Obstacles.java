@@ -29,17 +29,17 @@ public class Obstacles {
   private int barrierHealth = 12;
   private int counter = 0;
   private boolean barrierHit;
+  
 
   
-  public void setBarriersLocation() {
+  public void setBarriersLocation(int x) {
     // https://github.com/leonardo-ono/Java2DSpaceInvaders/blob/master/src/br/ol/spaceinvaders/SpaceInvadersGame.java
-        for (int id = 0; id < 4; id++) {
-            for (int row = 0; row < 4; row++) {
-                for (int col = 0; col < 3; col++) {
-                    if (col == 1 && row == 3) {
-                        continue;
+        //tell object this is x position and call it to the image
+                     
+                      
+                      
                     }
-                    Shield shield = new Shield(id, col, row);
+                    Shield barrier = new Barrier(id, col, row);
                     SpaceInvaders.add(shield);
                 }
             }
