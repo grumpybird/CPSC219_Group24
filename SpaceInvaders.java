@@ -39,6 +39,7 @@ public class SpaceInvaders extends Application {
     public static final double BOARD_WIDTH = 800;
     public static final double BOARD_HEIGHT = 600;
     public static final double AVATAR_START_X = ((BOARD_WIDTH / 2) - 37.5);
+   
 
     public static void main(String[] args){
         launch(args);
@@ -67,6 +68,9 @@ public class SpaceInvaders extends Application {
 
         Image sprite = new Image("sprite.png");
         gc.drawImage(sprite, AVATAR_START_X, 550, 75, 50);
+        
+        Image barrier = new Image("Barrier.png");
+        gc.drawImage(barrier, 400,500)
 
         primaryStage.show();
     }
