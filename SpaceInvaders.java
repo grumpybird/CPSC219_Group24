@@ -32,11 +32,13 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.Node;
+import javafx.scene.image.Image;
 
 public class SpaceInvaders extends Application {
 
     public static final double BOARD_WIDTH = 800;
     public static final double BOARD_HEIGHT = 600;
+    public static final double AVATAR_START_X = ((BOARD_WIDTH / 2) - 37.5);
 
     public static void main(String[] args){
         launch(args);
@@ -47,7 +49,7 @@ public class SpaceInvaders extends Application {
         primaryStage.setTitle("Space Invaders");
 
         Group root = new Group();
-        Scene boardScene = new Scene(root);
+        Scene boardScene = new Scene(root, BOARD_WIDTH, BOARD_HEIGHT);
         primaryStage.setScene(boardScene);
 
         Canvas canvas = new Canvas(BOARD_WIDTH, BOARD_HEIGHT);
@@ -62,6 +64,9 @@ public class SpaceInvaders extends Application {
         gc.setFont(theFont);
         gc.fillText("LIVES: ", 100, 25);
         gc.fillText("SCORE: ", 500, 25);
+
+        Image sprite = new Image("sprite.png");
+        gc.drawImage(sprite, AVATAR_START_X, 550, 75, 50);
 
         primaryStage.show();
     }
