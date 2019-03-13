@@ -70,7 +70,9 @@ public class SpaceInvaders extends Application {
         gc.drawImage(sprite, AVATAR_START_X, 550, 75, 50);
         
         Image barrier = new Image("Barrier.png");
-        gc.drawImage(barrier, 400,500)
+        gc.drawImage(barrier, 400,500);
+            //for (id = 1; id < 4; id++) {
+                    //if (col == 1 && row == 3) {
 
         primaryStage.show();
     }
