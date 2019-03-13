@@ -46,11 +46,12 @@ public class Obstacles {
         }
     
   }
+ 
   
   public boolean getBarrierHit() {
-    if (obstacle.collision() = true)
+    if (barrierHealth <= 0)
     {
-      return true;
+      return barrierHit = true;
     }
     else
     {
@@ -68,15 +69,6 @@ public class Obstacles {
       getBarrierHit = false
       
      
-  }
-  public boolean barrierDisplay () {
-    if (barrierHealth > 12)
-    {
-      return true;
-    }
-    else
-    {
-      return false;
     }
   
   public getbarrierHealth() {
