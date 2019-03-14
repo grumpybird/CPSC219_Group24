@@ -30,20 +30,20 @@ public class Obstacles {
   private int counter = 0;
   private boolean barrierHit;
   
-
+   Image barrier = new Image("Barrier.png");
+   
   
-  public void setBarriersLocation(int x) {
+  public void setBarriersLocation(int x, int y) {
     // https://github.com/leonardo-ono/Java2DSpaceInvaders/blob/master/src/br/ol/spaceinvaders/SpaceInvadersGame.java
-        //tell object this is x position and call it to the image
-                     
-                      
+        
+       gc.drawImage(barrier, x,y);
+       Image barrier1 = new obstacles1;
+       Image barrier2 = new obstacles2;
+       Image barrier3 = new obstacles3;
+         
                       
                     }
-                    Shield barrier = new Barrier(id, col, row);
-                    SpaceInvaders.add(shield);
-                }
-            }
-        }
+                    
     
   }
  
