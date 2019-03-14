@@ -67,15 +67,26 @@ public class Avatar {
 	}
 
 	public void drawAvatar(GraphicsContext gc){
+        gc.fillRect(0, 550, 800, 50);
         gc.drawImage(SPRITE, locationX, AVATAR_Y, SPRITE_WIDTH, SPRITE_HEIGHT);
     }
 
 	public void moveLeft(){
-        locationX -= AVATAR_VELOCITY_X;
+	    if (locationX - AVATAR_VELOCITY_X >= 0) {
+            locationX -= AVATAR_VELOCITY_X;
+        }
+	    else{
+
+        }
 	}
 
 	public void moveRight(){
-        locationX += AVATAR_VELOCITY_X;
+	    if (locationX + AVATAR_VELOCITY_X <= 725){
+            locationX += AVATAR_VELOCITY_X;
+        }
+        else{
+
+        }
 	}
 
 	public double getLocationX(){

@@ -64,6 +64,8 @@ public class SpaceInvaders extends Application {
         root.getChildren().add(canvas);
         gc = canvas.getGraphicsContext2D();
 
+        PrepareActionHandler();
+
         gc.setFill(Color.BLACK);
         gc.fillRect(0, 0, BOARD_WIDTH, BOARD_HEIGHT);
 
@@ -78,8 +80,16 @@ public class SpaceInvaders extends Application {
         //for (id = 1; id < 4; id++) {
         //if (col == 1 && row == 3) {
 
+        gc.setFill(Color.BLACK);
+
         player = new Avatar();
         player.drawAvatar(gc);
+
+        new AnimationTimer() {
+            public void handle(long currentNanoTime) {
+                actionHandler();
+            }
+        }.start();
 
         primaryStage.show();
     }
@@ -103,7 +113,7 @@ public class SpaceInvaders extends Application {
 
     public static void actionHandler(){
 
-        if (currentlyActiveKeys.contains("A")){
+        if (currentlyActiveKeys.contains("LEFT")){
             player.moveLeft();
             player.drawAvatar(gc);
         }
