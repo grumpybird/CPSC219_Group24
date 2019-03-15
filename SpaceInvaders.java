@@ -75,10 +75,14 @@ public class SpaceInvaders extends Application {
         gc.fillText("LIVES: ", 100, 25);
         gc.fillText("SCORE: ", 500, 25);
 
-        Image barrier = new Image("Barrier.png");
-        gc.drawImage(barrier, 400,500);
-        //for (id = 1; id < 4; id++) {
-        //if (col == 1 && row == 3) {
+        
+        Obstacles barrier1 = new barrier(x,y);
+        Obstacles barrier2 = new barrier(x,y);
+        Obstacles barrier3 = new barrier(x,y);
+        barrier1.setBarriersLocation();
+        barrier2.setBarriersLocaation();
+        barrier3.setBarriersLocation();
+        
 
         gc.setFill(Color.BLACK);
 
