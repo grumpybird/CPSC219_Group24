@@ -23,7 +23,7 @@ public void setScore(){
    // score += 1;
 }
 /** 
-*Return Score
+*Returns the Score onto the main screen
 */
 
 public getScore(){
