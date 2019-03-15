@@ -62,6 +62,7 @@ public class Projectile {
   
   //accessor methods:
   /**
+   * Takes no arguments returns double of bullet's location's x-coordinate.
    * @return Current x-coordinate of the bullet at time of the call. 
    */
   public double getLocationX(){
@@ -77,6 +78,7 @@ public class Projectile {
   }
   
   /**
+   * Takes no arguments returns double of the bullet's velocity in the y-direction.
    * @return Current velocity in the y-direction of the bullet at time of the call. 
    */
   public double getYVelocity(){
@@ -84,6 +86,8 @@ public class Projectile {
   }
   
   /**
+   * Takes no arguments returns double of the direction of the bullet's trajectory on the y-plane of the screen
+   * -1.0 for down, 1.0 for up.
    * @return Current x-coordinate of the bullet at time of the call. 
    */
   public double getDirection(){
@@ -95,15 +99,27 @@ public class Projectile {
   //For demo 2 there are no mutator methods, projectile stuck at default.
   
   
+  /**
+   * Takes @param time of type double an multiplies it by the direction and velocity to update the x 
+   * and y location the bullet should be at based on the time parameter.
+   * @param time of type double - the current time
+   * @return Current x-coordinate of the bullet at time of the call. 
+   */
   public void update(double time){
 	  location_X += velocityX*direction*time; // should equal zero, omit?
 	  location_Y +=velocityY*direction*time;
   }
   
+  /**
+   * Draws bullet at desired location.
+   */
   public void render(GraphicsContext gc) {
 	  gc.drawImage(bullet, location_X, location_Y); 
   }
   
+  /**
+   * Sets up boundary for later versions to handle collisions with bullet.
+   */
   public Rectangle2D getBoundary(){
 	  return new Rectangle2D(location_X, location_Y, bWidth, bHeight);
   }
