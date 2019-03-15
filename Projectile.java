@@ -44,7 +44,7 @@ public class Projectile extends SpaceInvaders{
   
   
    //Creating an image 
-  private Image bulletPNG = new Image(new FileInputStream("bullet.jpg"));
+  private Image bulletPNG = new Image("bullet.jpg");
    
    //
   
