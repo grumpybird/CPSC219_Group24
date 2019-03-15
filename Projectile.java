@@ -23,8 +23,7 @@ import javafx.scene.image.Image;
  * fired from. It will stay constant throughout its tragectory.
  * Velocity is set to a default of 50.0
  * bullet.png is originally 1280x1280 size is set to be 50x50.
- * Tutorial used and modified to develop this part of the program. Accessed March 13th, 2019.
- * https://gamedevelopment.tutsplus.com/tutorials/introduction-to-javafx-for-game-development--cms-23835?fbclid=IwAR3fNZ6s8gnO27uIOJH0oGf0eFtqfaU_BBmYGbF4_vaEPlKPi8YBnfFTccI
+ * 
  * */
 
 
@@ -34,19 +33,20 @@ public class Projectile extends SpaceInvaders{
   //instance variables:
   //For demo 2 SPEED is a constant, only one kind of projectile available.
   //private final double SPEED = - 50;
-  private double bulletLocationX = avatar.getLocationX() + 25.0;//square png.
-  private double bulletLocationY = avatar.getLocationY() - 50.0;//spuare png.
-  private double velocityX = 0.0;//restricted to only move up or down.
-  private double velocityY = 50.0;// DEFAULT SPEED?
-  private double width = 50.0;//square png
-  private double height=50.0;//square png
+  private double BULLETLOCATION_X = player.getLocationX() + 32.5;//square png.
+  private static final double BULLETLOCATION_Y = player.getLocationY() - 15.0;//spuare png.
+  private static final double VELOCITY_X = 0.0;//restricted to only move up or down.
+  private static final double VELOCITY_Y = 5.0;// DEFAULT SPEED?
+  private static final Image BULLET_PNG = new Image("bullet.jpg");
+  private static final int IMAGE_WIDTH = 15;//spuare png
+  private static final int IMAGE_HEIGHT = 15;//square png
   private double direction;
   
+  //private int numOfBullets;
+  //private boolean hitLanded;
+  //private boolean miss;
   
-   //Creating an image 
-  private Image bulletPNG = new Image("bullet.jpg");
    
-   //
   
   //constructors:
   //For demo 2 only level 1 is developed, no capabilities to modify projectile defaults. 
@@ -55,20 +55,27 @@ public class Projectile extends SpaceInvaders{
   public Projectile(){
 	  direction = -1.0;//avatar shoots at aliens, projectile moves up in Y direction.
 	  // direction = 1.0 for aliens shooting. p moves down in the Y direction.
+	  double velocity_X = VELOCITY_X;
+	  double velocity_Y = VELOCITY_Y;
+	  double location_X = BULLETLOCATION_X;
+	  double location_Y = BULLETLOCATION_Y;
+	  Image bullet = BULLET_PNG;
+	  int bWidth = IMAGE_WIDTH;
+	  int bHeight = IMAGE_HEIGHT;
   }
   
   
   //accessor methods:
   public double getLocationX(){
-    return bulletLocationX;
+    return location_X;
   }
   
   public double getLocationY(){
-    return bulletLocationY;
+    return location_Y;
   }
   
   public double getYVelocity(){
-	  return velocityY;
+	  return velocity_Y;
   }
   
   public double getDirection(){
@@ -81,16 +88,16 @@ public class Projectile extends SpaceInvaders{
   
   
   public void update(double time){
-	  bulletLocationX += velocityX*direction*time; // should equal zero, omit?
-	  bulletLocationY +=velocityY*direction*time;
+	  location_X += velocityX*direction*time; // should equal zero, omit?
+	  location_Y +=velocityY*direction*time;
   }
   
   public void render(GraphicsContext gc) {
-	  gc.drawImage(bulletPNG, bulletLocationX, bulletLocationY); 
+	  gc.drawImage(bullet, location_X, location_Y); 
   }
   
   public Rectangle2D getBoundary(){
-	  return new Rectangle2D(bulletLocationX, bulletLocationY, width, height);
+	  return new Rectangle2D(location_X, location_Y, bWidth, bHeight);
   }
   
   //Checks if projectile interesects with any aliens.
