@@ -40,6 +40,10 @@ https://gist.github.com/xSputnicKx/fbf9a329818cff0a4a02f773b22ed9a7?fbclid=IwAR0
 
 (7) StackOverflow to solve syntax and logic errors during development for java.
 
+(8) ccannon94's space invader https://github.com/ccannon94/javafx-space-invaders
+
+(9) https://github.com/Shindanaide/SpaceInvaders
+
 DEMO 2:
 
 For DEMO 2 we are making the GUI for our Space Invaders game. We will also stop running everything form the SpaceInvaders.java file and instead use various classes for each attribute of the game. 
