@@ -17,10 +17,15 @@ public class Points extends SpaceInvaders{
 has hit the ship and increases the score. for simplicity our current model will increase 1 point for each alient hit.
 we plan to have an increase in score as the aliens get farther
 */
+  
 public void setScore(){
  // if (alien.collision() = true)
    // score += 1;
 }
+/** 
+*Return Score
+*/
+
 public getScore(){
   return score;
 }
