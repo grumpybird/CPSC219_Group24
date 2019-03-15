@@ -31,7 +31,7 @@ public class Projectile {
   
   
   //instance variables:
-  //For demo 2 SPEED is a constant, only one kind of projectile available.
+  //For demo 2 speed is a constant, only one kind of projectile available.
   
   private double BULLETLOCATION_X = player.getLocationX() + 32.5;//square png.
   private static final double BULLETLOCATION_Y = player.getLocationY() - 15.0;//spuare png.
@@ -41,11 +41,6 @@ public class Projectile {
   private static final int IMAGE_WIDTH = 15;//spuare png
   private static final int IMAGE_HEIGHT = 15;//square png
   private double direction;
-  
-  //private int numOfBullets;
-  //private boolean hitLanded;
-  //private boolean miss;
-  
    
   
   //constructors:
@@ -66,18 +61,31 @@ public class Projectile {
   
   
   //accessor methods:
+  /**
+   * @return Current x-coordinate of the bullet at time of the call. 
+   */
   public double getLocationX(){
     return location_X;
   }
   
+  /**
+   * Takes no arguments returns double of bullet's location's y-coordinate.
+   * @return Current y-coordinate of the bullet at time of the call. 
+   */
   public double getLocationY(){
     return location_Y;
   }
   
+  /**
+   * @return Current velocity in the y-direction of the bullet at time of the call. 
+   */
   public double getYVelocity(){
 	  return velocity_Y;
   }
   
+  /**
+   * @return Current x-coordinate of the bullet at time of the call. 
+   */
   public double getDirection(){
 	  return direction;
   }
