@@ -27,12 +27,12 @@ import javafx.scene.image.Image;
  * */
 
 
-public class Projectile extends SpaceInvaders{
+public class Projectile {
   
   
   //instance variables:
   //For demo 2 SPEED is a constant, only one kind of projectile available.
-  //private final double SPEED = - 50;
+  
   private double BULLETLOCATION_X = player.getLocationX() + 32.5;//square png.
   private static final double BULLETLOCATION_Y = player.getLocationY() - 15.0;//spuare png.
   private static final double VELOCITY_X = 0.0;//restricted to only move up or down.
