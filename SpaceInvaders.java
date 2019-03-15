@@ -200,10 +200,16 @@ public class SpaceInvaders extends Application {
         if (rightEnemy) { //check if the enemy is going toward right
             if (pointer.getX() + ENEMY_EDGE >= BOARD_WIDTH) { //check collision on right edge
                 rightEnemy = false;
+                for (int i = 0; i < enemies.length; i++) {
+                    if (enemies[i] != null) {
+                        enemies[i].setY(enemies[i].getY() + 50);
+                    }
 
+            }
             }
             for (int i = 0; i < enemies.length; i++) {
                 if (enemies[i] != null) {
+                	
                     enemies[i].setX(enemies[i].getX() + SPEED); //move the enemy 
                 }
             }
@@ -211,6 +217,11 @@ public class SpaceInvaders extends Application {
         } else {
             if (pointer.getX() - ((ENEMY_EDGE * (ENEMY_COLUMN + 2))) <= 0) {
                 rightEnemy = true;
+                for (int i = 0; i < enemies.length; i++) {
+                    if (enemies[i] != null) {
+                        enemies[i].setY(enemies[i].getY() + 50);
+                    }
+            }
             }
             for (int i = 0; i < enemies.length; i++) {
                 if (enemies[i] != null) {
