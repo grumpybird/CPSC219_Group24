@@ -47,6 +47,9 @@ public class SpaceInvaders extends Application {
     private static Scene boardScene;
     private static Avatar player;
     private static GraphicsContext gc;
+    private static Obstacles barrier1;
+    private static Obstacles barrier2;
+    private static Obstacles barrier3;
 
     public static void main(String[] args){
         launch(args);
@@ -76,18 +79,20 @@ public class SpaceInvaders extends Application {
         gc.fillText("SCORE: ", 500, 25);
 
         
-        Obstacles barrier1 = new barrier(x,y);
-        Obstacles barrier2 = new barrier(x,y);
-        Obstacles barrier3 = new barrier(x,y);
-        barrier1.setBarriersLocation();
-        barrier2.setBarriersLocaation();
-        barrier3.setBarriersLocation();
-        
+        barrier1 = new Obstacles(1);
+        barrier2 = new Obstacles(2);
+        barrier3 = new Obstacles(3);
+
+        barrier1.drawBarrier(gc);
+        barrier2.drawBarrier(gc);
+        barrier3.drawBarrier(gc);
 
         gc.setFill(Color.BLACK);
 
         player = new Avatar();
         player.drawAvatar(gc);
+
+
 
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
