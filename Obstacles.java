@@ -43,7 +43,12 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.event.EventHandler;
 
-// https://stackoverflow.com/questions/27359758/detect-collision-in-simple-space-invaders
+/*
+ * Class representing the barriers in the game Space Invaders
+ * Each class of Obstacles will take instance variables of barrierHealth, counter, barrierHit, barrierX, barrier
+ * It will also take constant instance variables of BARRIER_IMAGE, BARRIER_WIDTH, BARRIER_HEIGHT, BARRIER_Y, BARRIER1_X,
+ * BARRIER2_X, and BARRIER3_X
+ */
 public class Obstacles {
     private int barrierHealth;
     private int counter = 0;
@@ -60,6 +65,12 @@ public class Obstacles {
     private static final int BARRIER3_X = 575;
 
 
+  // Constructors:
+    
+   /**
+    * Takes barrier as an argument 
+    * @param barrier tells the constructor which barrier it belongs to and set it's location
+    */
     public Obstacles(int barrier){
         Image barrierImage = BARRIER_IMAGE;
         int barrierWidth = BARRIER_WIDTH;
@@ -77,13 +88,20 @@ public class Obstacles {
             barrierX = BARRIER3_X;
         }
     }
-
+/**
+ * Takes gc as a argument to draw the barrier on the Stage
+ * @param gc allows to draw the barriers at a set location as well as set a text of it's health status
+ */
     public void drawBarrier(GraphicsContext gc){
         gc.drawImage(BARRIER_IMAGE, barrierX, BARRIER_Y, BARRIER_WIDTH, BARRIER_HEIGHT);
         gc.setFill(Color.BLACK);
         gc.fillText("12", barrierX + 30, BARRIER_Y + 30);
     }
-
+    // Accessor (getter) Methods: 
+/**
+ * Retrieves the barrier's health from the obstacles
+ * @return the value of the barrier's health
+ */
     public int getBarrierHealth(){
         return barrierHealth;
     }
