@@ -44,7 +44,10 @@ DEMO 2:
 
 For DEMO 2 we are making the GUI for our Space Invaders game. We will also stop running everything form the SpaceInvaders.java file and instead use various classes for each attribute of the game. 
 The main file will be SpaceInvaders.java, this will be the file that starts, manages and quits the game. It will also call the other classes and get information back from them to determine the status of all objects on the board, as well as, update the displayed information accordingly.
- 
+
+The GITHUB link respitory: https://github.com/grumpybird/CPSC219_Group24.git
+
+To locate demo2, you will have to go to our github respitory and download all the files into a zip fileand compile it through command javac and after compilation run program with java SpaceInvaders in console. Or in Eclipse by importing all the class files and running it. 
 
 FOR DEMO #2 REFERENCE USED:
 
