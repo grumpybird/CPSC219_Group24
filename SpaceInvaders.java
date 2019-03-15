@@ -144,10 +144,6 @@ public class SpaceInvaders extends Application {
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
                 actionHandler();
-		if (currentNanoTime == 202000000){
-                    gc.fillRect(0, 0, BOARD_WIDTH, BOARD_HEIGHT);
-                    gc.fillText("GAME OVER", 200, 200);
-                }
             }
         }.start();
 
