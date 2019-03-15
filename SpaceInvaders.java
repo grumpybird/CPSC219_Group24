@@ -9,7 +9,10 @@
  *
  * @date: March 1, 2019.
  *
- * @version: DEMO 1
+ * @version: DEMO 2
+ * For demo 2 our program is currently interactive with the user through the arrowkeys,
+ * moving the avatar left and right from the input. When the main program runs, aliens, barriers and avatars are displayed on
+ * the screen. Defaults for each objects are specified in their respective class.
  *
  * URL OF CODE USED AND MODIFIED TO DEVELOP THIS PART OF THE PROGRAM:
  * https://gist.github.com/xSputnicKx/fbf9a329818cff0a4a02f773b22ed9a7?fbclid=IwAR0ojil66TCbkFd4DlJT5zh35pDCxidxa_RFCssuYXWBCaEO2bDXCSfzGk8
@@ -40,9 +43,16 @@ import javafx.scene.input.KeyEvent;
 import javafx.event.EventHandler;
 import javafx.util.Duration;
 import java.util.HashSet;
+/**
+* Space invaders is our main class, which handles most of the functions. It starts the game and handles input from user
+*It draws all the objects, such as aliens, barriers and avatar using javafx. At the current stafe it handles animation 
+* for the aliens.
+*/
+
 
 public class SpaceInvaders extends Application {
-    
+
+   //Instance Variables 
      Group root = new Group();
     
     boolean rightEnemy = true;
@@ -59,7 +69,7 @@ public class SpaceInvaders extends Application {
     private static Obstacles barrier3;
     
     Image enemiesV = new Image(
-            "alien.png");
+            "alien1.gif");
     int SCREEN_WIDTH = 800;
     int SCREEN_HEIGHT = 800;
     int ENEMY_EDGE = 40;
@@ -72,6 +82,10 @@ public class SpaceInvaders extends Application {
     ImageView[] enemies = new ImageView[ENEMY_COLUMN * ENEMY_ROW];
     int updateTime = 28;
     
+/**
+* It uses an image view to store the images into an arraylist of the aliens, sets the width of the blocks using the instance
+* variables ENEMY_EDGE. Also in a 7 by 5 arrangment. Sets the size of the image of each alien.
+*/
     public void movement() {
         for (int j = 0; j < ENEMY_ROW ; j++) {
             for (int i = 0; i < ENEMY_COLUMN; i++) {
@@ -91,10 +105,19 @@ public class SpaceInvaders extends Application {
         }
         updateTime-=3;
     }
+
+/**
+* Launches program and starts game
+*/
     public static void main(String[] args){
         launch(args);
     }
 
+/**
+* This makes the stage and scenes for everything in the game. Displays all information relevant to user including the Lives,
+* score, aliens, barriers and avatar. Also has an animation tiemr to time the movements of the aliens
+*/
+	
     public void start(Stage primaryStage){
 
         primaryStage.setTitle("Space Invaders");
@@ -149,6 +172,10 @@ public class SpaceInvaders extends Application {
 
         primaryStage.show();
     }
+/**
+* Method to take input from user. Everytime a key is pressed it includes it in a list, and deletes it when its released allowing 
+* handler to user press more than 1 key at a time
+*/
 
     public static void PrepareActionHandler(){
 
@@ -166,7 +193,10 @@ public class SpaceInvaders extends Application {
             }
         });
     }
-
+/**
+* Moves take the input in the list and initiates it onto the avatar. Can move left, right and eventually shoots.
+* avatar moves by removing previous location of avatar and drawing new location of avatar in its place.
+*/
     public static void actionHandler(){
 
         if (currentlyActiveKeys.contains("LEFT")){
@@ -195,6 +225,10 @@ public class SpaceInvaders extends Application {
 
         }
     }
+/**
+* Sets the limits of the movement of the alien and the blank rectangle (spacing between aliens).
+* Also sets condition for the aliens to move downwards after hitting the sides.
+*/
 
      public void movementCore() {
         if (rightEnemy) { //check if the enemy is going toward right
