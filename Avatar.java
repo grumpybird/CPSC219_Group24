@@ -29,6 +29,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
+import javafx.geometry.Rectangle2D;
 
 /**
  * Class represents the avatar in the game.
