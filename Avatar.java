@@ -57,12 +57,6 @@ public class Avatar {
 
 	// Constructor
 	public Avatar(){
-        double locationY = AVATAR_Y;
-        int velocityX = AVATAR_VELOCITY_X;
-        Image avatarSprite = SPRITE;
-        int width = SPRITE_WIDTH;
-        int height = SPRITE_HEIGHT;
-
         alive = true;
         lives = 3;
         locationX = INITIAL_AVATAR_X;
@@ -93,6 +87,14 @@ public class Avatar {
         else{
 
         }
+	}
+
+	public void avatarHit(){
+		lives -= lives;
+	}
+
+	public Rectangle2D getBoundary(){
+		return new Rectangle2D(locationX, AVATAR_Y, SPRITE_WIDTH, SPRITE_HEIGHT);
 	}
 
 	// Getter methods

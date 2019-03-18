@@ -72,10 +72,6 @@ public class Obstacles {
     * @param barrier tells the constructor which barrier it belongs to and set it's location
     */
     public Obstacles(int barrier){
-        Image barrierImage = BARRIER_IMAGE;
-        int barrierWidth = BARRIER_WIDTH;
-        int barrierHeight = BARRIER_HEIGHT;
-
         barrierHealth = 12;
 
         if (barrier == 1){
@@ -105,4 +101,10 @@ public class Obstacles {
     public int getBarrierHealth(){
         return barrierHealth;
     }
+
+    public void barrierHit(){
+        barrierHealth -= 1;
+    }
+
 }
+

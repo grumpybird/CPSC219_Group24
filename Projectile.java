@@ -1,14 +1,28 @@
-/*#####################################################################################################################################
-This class will have all of the events for projectiles if possible. Their properties including speed and determining how they will move
-across the board. Lots of if statements to determine which object they are colliding with and events for how they will interact
-with the object theyve collided with, ie losing a life or removing an alien from the board. Consider using events so that if the Projectile
-class determines an instance of itself has collided with an object of another class, call a method from that class which will contain
-the appropriate action
-#####################################################################################################################################*/
 import java.awt.Rectangle;
-import javafx.geometry.Rectangle2D;
+import javafx.animation.Animation;
+import javafx.animation.AnimationTimer;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.KeyCode;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.scene.Node;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
+import javafx.event.EventHandler;
+import javafx.util.Duration;
+import javafx.geometry.Rectangle2D;
 
 /**
  * This Class represents the projectiles being fired and their
@@ -33,30 +47,27 @@ public class Projectile {
   //instance variables:
   //For demo 2 speed is a constant, only one kind of projectile available.
   
-  private double BULLETLOCATION_X = player.getLocationX() + 32.5;//square png.
-  private static final double BULLETLOCATION_Y = player.getLocationY() - 15.0;//spuare png.
-  private static final double VELOCITY_X = 0.0;//restricted to only move up or down.
-  private static final double VELOCITY_Y = 5.0;// DEFAULT SPEED?
+  private static final double BULLET_INITIAL_X = player.getLocationX() + 32.5;//square png.
+  private static final double BULLET_INITIAL_Y = player.getLocationY() - 15.0;//square png.
+  private static final double VELOCITY_Y = 10.0;// DEFAULT SPEED?
   private static final Image BULLET_PNG = new Image("bullet.jpg");
-  private static final int IMAGE_WIDTH = 15;//spuare png
-  private static final int IMAGE_HEIGHT = 15;//square png
+  private static final double IMAGE_WIDTH = 15;//spuare png
+  private static final double IMAGE_HEIGHT = 15;//square png
+  private static final double DIRECTION_FROM_AVATAR = -1.0;
+  private static final double DIRECTION_FROM_ALIEN = 1.0;
+
+  private double locationX;
+  private double locationY;
   private double direction;
-   
   
   //constructors:
   //For demo 2 only level 1 is developed, no capabilities to modify projectile defaults. 
   //Bullet starting position is based on the avatar. 
   //Takes no arguments creates a projectile
   public Projectile(){
-	  direction = -1.0;//avatar shoots at aliens, projectile moves up in Y direction.
-	  // direction = 1.0 for aliens shooting. p moves down in the Y direction.
-	  double velocity_X = VELOCITY_X;
-	  double velocity_Y = VELOCITY_Y;
-	  double location_X = BULLETLOCATION_X;
-	  double location_Y = BULLETLOCATION_Y;
-	  Image bullet = BULLET_PNG;
-	  int bWidth = IMAGE_WIDTH;
-	  int bHeight = IMAGE_HEIGHT;
+	  locationX = BULLET_INITIAL_X;
+	  locationY = BULLET_INITIAL_Y;
+	  direction = 0;
   }
   
   
@@ -66,7 +77,7 @@ public class Projectile {
    * @return Current x-coordinate of the bullet at time of the call. 
    */
   public double getLocationX(){
-    return location_X;
+    return locationX;
   }
   
   /**
@@ -74,7 +85,7 @@ public class Projectile {
    * @return Current y-coordinate of the bullet at time of the call. 
    */
   public double getLocationY(){
-    return location_Y;
+    return locationY;
   }
   
   /**
@@ -82,7 +93,7 @@ public class Projectile {
    * @return Current velocity in the y-direction of the bullet at time of the call. 
    */
   public double getYVelocity(){
-	  return velocity_Y;
+	  return VELOCITY_Y;
   }
   
   /**
@@ -113,15 +124,21 @@ public class Projectile {
   /**
    * Draws bullet at desired location.
    */
-  public void render(GraphicsContext gc) {
-	  gc.drawImage(bullet, location_X, location_Y); 
+  public void drawProjectile(GraphicsContext gc) {
+      gc.fillRect(locationX, locationY, IMAGE_WIDTH, IMAGE_HEIGHT);
+	  gc.drawImage(bullet, locationX, locationY, IMAGE_WIDTH, IMAGE_HEIGHT);
+  }
+
+  public void avatarShoot(){
+      direction = DIRECTION_FROM_AVATAR;
+      locationX =
   }
   
   /**
    * Sets up boundary for later versions to handle collisions with bullet.
    */
   public Rectangle2D getBoundary(){
-	  return new Rectangle2D(location_X, location_Y, bWidth, bHeight);
+	  return new Rectangle2D(locationX, locationY, IMAGE_WIDTH, IMAGE_HEIGHT);
   }
   
   //Checks if projectile interesects with any aliens.
