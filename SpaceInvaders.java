@@ -48,13 +48,12 @@ public class SpaceInvaders extends Application {
 
     //Instance Variables
     Group root = new Group();
+    Projectile fromAvatar;
 
     Aliens aliensprite = new Aliens();
 
     private static final double BOARD_WIDTH = 800;
     private static final double BOARD_HEIGHT = 600;
-
-
 
     private static HashSet<String> currentlyActiveKeys;
     private static Scene boardScene;
@@ -63,10 +62,6 @@ public class SpaceInvaders extends Application {
     private static Obstacles barrier1;
     private static Obstacles barrier2;
     private static Obstacles barrier3;
-
-
-
-
 
 /**
  * It uses an image view to store the images into an arraylist of the aliens, sets the width of the blocks using the instance
@@ -79,12 +74,13 @@ public class SpaceInvaders extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
     /**
      * This makes the stage and scenes for everything in the game. Displays all information relevant to user including the Lives,
      * score, aliens, barriers and avatar. Also has an animation tiemr to time the movements of the aliens
      */
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
 
         primaryStage.setTitle("Space Invaders");
 
@@ -128,8 +124,6 @@ public class SpaceInvaders extends Application {
         player = new Avatar();
         player.drawAvatar(gc);
 
-
-
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
                 actionHandler();
@@ -138,12 +132,13 @@ public class SpaceInvaders extends Application {
 
         primaryStage.show();
     }
+
     /**
      * Method to take input from user. Everytime a key is pressed it includes it in a list, and deletes it when its released allowing
      * handler to user press more than 1 key at a time
      */
 
-    public static void PrepareActionHandler(){
+    public static void PrepareActionHandler() {
 
         currentlyActiveKeys = new HashSet<String>();
 
@@ -159,42 +154,40 @@ public class SpaceInvaders extends Application {
             }
         });
     }
+
     /**
      * Moves take the input in the list and initiates it onto the avatar. Can move left, right and eventually shoots.
      * avatar moves by removing previous location of avatar and drawing new location of avatar in its place.
      */
-    public static void actionHandler(){
+    public void actionHandler() {
 
-        if (currentlyActiveKeys.contains("LEFT")){
+        if (currentlyActiveKeys.contains("LEFT")) {
             player.moveLeft();
             player.drawAvatar(gc);
-        }
-
-        else{
+        } else {
 
         }
 
-        if (currentlyActiveKeys.contains("RIGHT")){
+        if (currentlyActiveKeys.contains("RIGHT")) {
             player.moveRight();
             player.drawAvatar(gc);
-        }
-
-        else{
+        } else {
 
         }
 
-        if (currentlyActiveKeys.contains("SPACE")){
-
-        }
-
-        else{
+        if (currentlyActiveKeys.contains("SPACE")) {
+            fromAvatar = new Projectile();
+            fromAvatar.avatarShoot(player, gc);
+        } else {
 
         }
     }
+
+
+}
 /**
  * Sets the limits of the movement of the alien and the blank rectangle (spacing between aliens).
  * Also sets condition for the aliens to move downwards after hitting the sides.
  */
 
 
-}
