@@ -164,26 +164,30 @@ public class SpaceInvaders extends Application {
         if (currentlyActiveKeys.contains("LEFT")) {
             player.moveLeft();
             player.drawAvatar(gc);
-        } else {
-
         }
 
         if (currentlyActiveKeys.contains("RIGHT")) {
             player.moveRight();
             player.drawAvatar(gc);
-        } else {
-
         }
 
         if (currentlyActiveKeys.contains("SPACE")) {
             fromAvatar = new Projectile();
             fromAvatar.avatarShoot(player, gc);
-        } else {
-
         }
     }
 
-
+    public void intersects(Obstacles anObstacle, Aliens anAlien) {
+        if (anAlien.getBoundary().intersects(fromAvatar.getBoundary())) {
+            fromAvatar.setIntersect(true);
+        } else if (anObstacle.getBoundary1().intersects(fromAvatar.getBoundary())) {
+            fromAvatar.setIntersect(true);
+        } else if (anObstacle.getBoundary2().intersects(fromAvatar.getBoundary())) {
+            fromAvatar.setIntersect(true);
+        } else if (anObstacle.getBoundary3().intersects(fromAvatar.getBoundary())) {
+            fromAvatar.setIntersect(true);
+        }
+    }
 }
 /**
  * Sets the limits of the movement of the alien and the blank rectangle (spacing between aliens).

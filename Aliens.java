@@ -4,6 +4,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.application.Application;
 import javafx.scene.Group;
+import javafx.geometry.Rectangle2D;
+
 
 //implement Aliens in the main app under stage to implement variables, then call constructor
 public class Aliens {
@@ -15,7 +17,7 @@ public class Aliens {
     public int MOV = 0;
 
     int SCREEN_WIDTH = 800;
-    int SCREEN_HEIGHT = 800;
+    int SCREEN_HEIGHT = 600;
     int ENEMY_EDGE = 40;
     int ENEMY_ROW = 5;
     int ENEMY_COLUMN = 7;
@@ -27,7 +29,11 @@ public class Aliens {
 
 
     ImageView[] enemies = new ImageView[ENEMY_COLUMN * ENEMY_ROW];
-    int updateTime = 28;
+    int updateTime = 65;
+
+    public Rectangle2D getBoundary(){
+        return new Rectangle2D(1, 1, 1, 1);
+    }
 
     public void movement(Group root) {
         for (int j = 0; j < ENEMY_ROW ; j++) {

@@ -42,6 +42,8 @@ import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Rectangle2D;
+
 
 /*
  * Class representing the barriers in the game Space Invaders
@@ -93,6 +95,19 @@ public class Obstacles {
         gc.setFill(Color.BLACK);
         gc.fillText("12", barrierX + 30, BARRIER_Y + 30);
     }
+
+    public Rectangle2D getBoundary1(){
+        return new Rectangle2D(BARRIER1_X, BARRIER_Y, BARRIER_WIDTH, BARRIER_HEIGHT);
+    }
+
+    public Rectangle2D getBoundary2(){
+        return new Rectangle2D(BARRIER2_X, BARRIER_Y, BARRIER_WIDTH, BARRIER_HEIGHT);
+    }
+
+    public Rectangle2D getBoundary3(){
+        return new Rectangle2D(BARRIER3_X, BARRIER_Y, BARRIER_WIDTH, BARRIER_HEIGHT);
+    }
+
     // Accessor (getter) Methods: 
 /**
  * Retrieves the barrier's health from the obstacles

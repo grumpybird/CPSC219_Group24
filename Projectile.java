@@ -47,7 +47,7 @@ public class Projectile {
 
   private static final double BULLET_INITIAL_X = 400;//square png.
   private static final double BULLET_INITIAL_Y = 535;//square png.
-  private static final double VELOCITY_Y = 0.01;// DEFAULT SPEED?
+  private static final double VELOCITY_Y = 10.0;// DEFAULT SPEED?
   private static final Image BULLET = new Image("bullet.png");
   private static final double IMAGE_WIDTH = 15;//spuare png
   private static final double IMAGE_HEIGHT = 15;//square png
@@ -110,6 +110,10 @@ public class Projectile {
 	  return direction;
   }
 
+  public void setIntersect(boolean state){
+      intersect = state;
+  }
+
 
   //mutator methods:
   //For demo 2 there are no mutator methods, projectile stuck at default.
@@ -125,7 +129,7 @@ public class Projectile {
       double direction = getAvatarDirection();
       setLocationX(player.getLocationX());
       drawProjectile(gc);
-      while ((locationY - VELOCITY_Y > 0) || (intersect == true)){
+      while ((locationY - VELOCITY_Y > 0) || (intersect == false)){
           gc.fillRect(locationX, locationY, IMAGE_WIDTH, IMAGE_HEIGHT);
           locationY += (VELOCITY_Y * direction);
           drawProjectile(gc);
@@ -139,22 +143,11 @@ public class Projectile {
   public Rectangle2D getBoundary(){
 	  return new Rectangle2D(locationX, locationY, IMAGE_WIDTH, IMAGE_HEIGHT);
   }
-
-  //Checks if projectile interesects with any aliens.
- /* public boolean intersects(Alien anAlien){
-	  return anAlien.setBoundary().intersects(this.getBoundary());
-  }
-  
-  //Checks if projectile interesects with any obstacles
-  public boolean intersects(Obstacle anObstacle){
-	  return anObstacle.setBoundary().intersects(this.getBoundary());
-  }
-  
   
   //Checks if projectile interesects with the avatar.
-  public boolean intersects(Avatar theAvatar) {
-	  return theAvatar.setBoundary().intersects(this.getBoundary());
-  } */
+  //public boolean intersects(Avatar theAvatar) {
+//	  return theAvatar.getBoundary().intersects(this.getBoundary());
+//  }
 
 
 }
