@@ -42,10 +42,12 @@ import java.util.Collections;
  * This is carried out through calls to each object's respective classes.
  *
  */
-public class SpaceInvaders {
+public class SpaceInvadersT {
+	private static int location = 42;
+	private static String[] targetQuads = { "*", "*", "*", "*", "*",  "*", "*", "*", "*", "*", "*", "*", "*", "*", "*",  "*", "*", "*", "*", "*", " ", " ", " ", " ", " "," ", " ", " ", " ", " ",  "-", " ", "-", " ", "-"," ", " ", " ", " ", " ", " ", " ", "X", " ", " "};
 	
 	
-  /**
+/**
    * DEMO 1:
    * For demo 1, the main method of this class is taking over:
    * initialization and the movement of the avatar from Avatar class
@@ -58,17 +60,30 @@ public class SpaceInvaders {
    * "x" to quit the game
    *
    */
+	
+public SpaceInvadersT() {
+}
+
+public SpaceInvadersT(int location, String[] targetQuads){
+ this.location = location;
+ this.targetQuads = targetQuads;
+}
+	
+public int getLocation() {
+	return location;
+	 
+}
+	
   public static void main(String[] args) {
 	System.out.println("       Space Invaders     ");
 	
     Scanner input = new Scanner(System.in);
     String sc = "";
 	
-	int location = 22;
 	
 	ArrayList<String> myList = new ArrayList<String>();
 	
-	String[] targetQuads = { "*", "*", "*", "*", "*",  "*", "*", "*", "*", "*",  " ", " ", " ", " ", " ",  "-", " ", "-", " ", "-", " ", " ", "X", " ", " "};
+	
 	
 	int i;
 	
@@ -83,7 +98,7 @@ public class SpaceInvaders {
         
         if (sc.equals("a"))
         {
-        	if (location > 20) {
+        	if (location > 40) {
 				Collections.swap(myList, location, location - 1);
 				location = location - 1;
 				for (i = 0; i < myList.size(); i++) {
@@ -100,7 +115,7 @@ public class SpaceInvaders {
         } 
         else if (sc.equals("d")) 
         {
-        	if (location < 24) {
+        	if (location < 44) {
 				Collections.swap(myList, location, location + 1);
 				location = location + 1;
 				for (i = 0; i < myList.size(); i++) {
@@ -108,13 +123,26 @@ public class SpaceInvaders {
 					if ((i + 1) % 5 == 0){
 						System.out.println("");
 					}
-				}
+			}
         	}
+        	
+     	
+        	
+        	
         	else
 			{
 				System.out.println("Sorry can't move farther right.");
+				
 			}
         }
+        
+        else if (sc.equals("f")) {
+        	Projectile.fire(location);
+        }
+        	
+        
+        
+        
         else if (sc.equals("x")) 
         {
           System.out.println("Game over");
@@ -129,6 +157,7 @@ public class SpaceInvaders {
        
     }
   }
-}
-
-
+  private void fire (int location) {
+	  int count = 1;
+	  while (count != 11) {
+		  if (myList[]
