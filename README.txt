@@ -78,3 +78,14 @@ http://pluspng.com/png-5832.html
 (17) alien1.gif https://github.com/Shindanaide/SpaceInvaders/blob/master/src/it/gov/casimiri/spaceinvaders/resources/invasore1.gif
 
 
+
+DEMO 3: 
+
+In DEMO 3, there is both the text-based and GUI version of the code. The GUI version consists of the main file SpaceInvaders.java, where it will manage and quit the game. It will also be able to call the other classes and get information back from them to determine the status of all objects on the board, as well as, update the diplayed information accordingly. The text-based version will have the ability to shoot. 
+
+The GITHUB link respitory: https://github.com/grumpybird/CPSC219_Group24.git
+
+To locate DEMO3, you will have to go to our github respitory and download all the files into a zip file and compile it through command javac and after compilation run program with java SpaceInvaders in console. Or in Eclipse by importing all the class files and running it. 
+
+FOR DEMO 3 REFERENCES USED: 
+
