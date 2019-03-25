@@ -137,10 +137,24 @@ public int getLocation() {
         }
         
         else if (sc.equals("f")) {
-        	Projectile.fire(location);
-        }
-        	
+        	for (int count = 0 ; count <=8 ;count++) {
+        	 if (targetQuads[(location - 5*(count))].equals (" ") == false){
+          		myList.set((location - 5*(count)), " " );
+          			count = 9;
+        	 }
+        	}
+       
         
+          			for (i = 0; i < myList.size(); i++) {
+    					System.out.print(myList.get(i) + "          ");
+    					if ((i + 1) % 5 == 0){
+    						System.out.println("");
+    					}
+          			}
+        }
+    			
+    
+      
         
         
         else if (sc.equals("x")) 
@@ -153,11 +167,28 @@ public int getLocation() {
 	        System.out.println("Invalid input, try again");
 	        
 	     }
-	       
+				 
+  			
        
-    }
+				  		}
+				  		
   }
-  private void fire (int location) {
-	  int count = 1;
-	  while (count != 11) {
-		  if (myList[]
+  
+  //private void fire (int location) {
+		
+  				
+  
+	  
+	 
+	  			
+	  			
+	  
+	 
+
+  
+    }
+  
+
+
+
+
