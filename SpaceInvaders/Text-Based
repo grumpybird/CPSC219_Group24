@@ -45,6 +45,8 @@ import java.util.Collections;
 public class SpaceInvadersT {
 	private static int location = 42;
 	private static String[] targetQuads = { "*", "*", "*", "*", "*",  "*", "*", "*", "*", "*", "*", "*", "*", "*", "*",  "*", "*", "*", "*", "*", " ", " ", " ", " ", " "," ", " ", " ", " ", " ",  "-", " ", "-", " ", "-"," ", " ", " ", " ", " ", " ", " ", "X", " ", " "};
+	static ArrayList<String> myList = new ArrayList<String>();
+	
 	
 	
 /**
@@ -81,15 +83,15 @@ public int getLocation() {
     String sc = "";
 	
 	
-	ArrayList<String> myList = new ArrayList<String>();
 	
-	
-	
-	int i;
+    int i;
 	
 	for (i = 0; i < targetQuads.length; i++) {
 		myList.add(targetQuads[i]);
 	}
+	
+	
+	
 
 	while ((sc.equals("x") == false))
     {
@@ -137,18 +139,24 @@ public int getLocation() {
         }
         
         else if (sc.equals("f")) {
-        	for (int count = 0 ; count <=8 ;count++) {
+        	int count = 1;
+        	for (count = 1; count<=8 ;count++) {
         	 if (targetQuads[(location - 5*(count))].equals (" ") == false){
-          		myList.set((location - 5*(count)), " " );
-          			count = 9;
+        		 targetQuads[(location - 5*count)] = " ";
+          		myList.set((location - 5*(count)), " ");
+          		
+          		break;
+          		
+          			
         	 }
         	}
-       
+        	
+        	
         
-          			for (i = 0; i < myList.size(); i++) {
-    					System.out.print(myList.get(i) + "          ");
-    					if ((i + 1) % 5 == 0){
-    						System.out.println("");
+          	for (i = 0; i < myList.size(); i++) {
+          		System.out.print(myList.get(i) + "          ");
+          		if ((i + 1) % 5 == 0){
+    			System.out.println("");
     					}
           			}
         }
@@ -188,7 +196,4 @@ public int getLocation() {
   
     }
   
-
-
-
 
