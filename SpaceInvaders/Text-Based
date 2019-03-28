@@ -1,4 +1,4 @@
- /**
+/**
  * CPSC 219 Group 24 Project: Board Class
  * 
  * @author: Paula Almeida
@@ -17,12 +17,9 @@
  */
 
 
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Collections;
 
 /**
- * FOR DEMO 1:
+ * FOR DEMO 3:
  * Code is organized so that everything runs from the SpaceInvaders.java file
  * Code and methods used from other classes to form a composite 
  * version of the program that relies on itself.
@@ -40,160 +37,115 @@ import java.util.Collections;
  * Initializing and placing the user's avatar at the designated place for the appropriate level.
  * Placing obstacles and enemies at their designated positions.
  * This is carried out through calls to each object's respective classes.
- *
+ * The game has the function of moving avatar and shooting at the aliens through user input
  */
+ 
+ 
+ 
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class SpaceInvadersT {
 	private static int location = 42;
 	private static String[] targetQuads = { "*", "*", "*", "*", "*",  "*", "*", "*", "*", "*", "*", "*", "*", "*", "*",  "*", "*", "*", "*", "*", " ", " ", " ", " ", " "," ", " ", " ", " ", " ",  "-", " ", "-", " ", "-"," ", " ", " ", " ", " ", " ", " ", "X", " ", " "};
 	static ArrayList<String> myList = new ArrayList<String>();
-	
-	
-	
-/**
-   * DEMO 1:
-   * For demo 1, the main method of this class is taking over:
-   * initialization and the movement of the avatar from Avatar class
-   * initialization and setup of the game board from the Board class
-   *
-   * Prompts user for desired movement of the avatar/option to quit game, and executes action:
-   * Takes String as parameters:
-   * "a" to move the avatar left
-   * "d" to move the avatar right 
-   * "x" to quit the game
-   *
-   */
-	
+
 public SpaceInvadersT() {
 }
 
 public SpaceInvadersT(int location, String[] targetQuads){
  this.location = location;
  this.targetQuads = targetQuads;
+ 
+}
+public SpaceInvadersT( SpaceInvadersT toCopy) {
+	this.location = toCopy.getLocation();
+	this.targetQuads = toCopy.getTargetQuads();
+	
 }
 	
 public int getLocation() {
 	return location;
 	 
 }
+public String[] getTargetQuads() {
+	return targetQuads;
+}
+public static void main(String[] args) {
+	System.out.println("               Space Invaders     ");
 	
-  public static void main(String[] args) {
-	System.out.println("       Space Invaders     ");
-	
-    Scanner input = new Scanner(System.in);
-    String sc = "";
-	
-	
-	
-    int i;
-	
-	for (i = 0; i < targetQuads.length; i++) {
+	for (int i = 0; i < targetQuads.length; i++) {
 		myList.add(targetQuads[i]);
 	}
-	
-	
-	
-
-	while ((sc.equals("x") == false))
-    {
-    	System.out.println("Move character (left 'a' or right 'd') or 'x' to quit game.");
-        sc = input.next();
-        
-        if (sc.equals("a"))
-        {
+	for (int i1 = 0; i1 < myList.size(); i1++) {
+		System.out.print(myList.get(i1) + "          ");
+		if ((i1 + 1) % 5 == 0){
+			System.out.println("");
+		}
+	}
+	Scanner input = new Scanner(System.in);
+    String sc = "";
+	while (sc.equals("x") == false) {
+		System.out.println("Move character (left 'a' or right 'd'), 'f' to fire and 'x' to quit game.");
+        sc = input.next();	
+        if (sc.equals("a")) {
         	if (location > 40) {
 				Collections.swap(myList, location, location - 1);
 				location = location - 1;
-				for (i = 0; i < myList.size(); i++) {
+				for (int i = 0; i < myList.size(); i++) {
 					System.out.print(myList.get(i) + "          ");
 					if ((i + 1) % 5 == 0){
 						System.out.println("");
 					}
 				}
         	}
-        	else
-			{
-				System.out.println("Sorry can't move farther left.");
-			}
-        } 
-        else if (sc.equals("d")) 
-        {
-        	if (location < 44) {
-				Collections.swap(myList, location, location + 1);
-				location = location + 1;
-				for (i = 0; i < myList.size(); i++) {
-					System.out.print(myList.get(i) + "          ");
-					if ((i + 1) % 5 == 0){
-						System.out.println("");
-					}
-			}
+        	else 
+        		System.out.println("Sorry can't move farther left.");	
+        }
+        	else if (sc.equals("d")) {
+        		if (location < 44) {
+        			Collections.swap(myList, location, location + 1);
+        			location = location + 1;
+        				for (int i = 0; i < myList.size(); i++) {
+        					System.out.print(myList.get(i) + "          ");
+        						if ((i + 1) % 5 == 0){
+        							System.out.println("");
+        						}
+        				}
+        		}
+        	
+        	else 
+        		System.out.println("Sorry can't move farther right.");
         	}
-        	
-     	
-        	
-        	
-        	else
-			{
-				System.out.println("Sorry can't move farther right.");
-				
-			}
-        }
-        
-        else if (sc.equals("f")) {
-        	int count = 1;
-        	for (count = 1; count<=8 ;count++) {
-        	 if (targetQuads[(location - 5*(count))].equals (" ") == false){
-        		 targetQuads[(location - 5*count)] = " ";
-          		myList.set((location - 5*(count)), " ");
-          		
-          		break;
-          		
-          			
-        	 }
-        	}
-        	
-        	
-        
-          	for (i = 0; i < myList.size(); i++) {
-          		System.out.print(myList.get(i) + "          ");
-          		if ((i + 1) % 5 == 0){
-    			System.out.println("");
-    					}
-          			}
-        }
-    			
-    
-      
-        
-        
-        else if (sc.equals("x")) 
-        {
-          System.out.println("Game over");
-        }
-        
-        else 
-	     {
-	        System.out.println("Invalid input, try again");
-	        
-	     }
-				 
-  			
-       
-				  		}
-				  		
-  }
-  
-  //private void fire (int location) {
-		
-  				
-  
-	  
-	 
-	  			
-	  			
-	  
-	 
-
-  
-    }
-  
-
+        	else if (sc.equals("f")) {
+            	int count = 1;
+            	for (count = 1; count<=8 ;count++) {
+            	 if (targetQuads[(location - 5*(count))].equals (" ") == false){
+            		 targetQuads[(location - 5*count)] = " ";
+              		myList.set((location - 5*(count)), " ");
+              		
+              		break;	
+            	 }
+            	}
+ 
+              	for (int i = 0; i < myList.size(); i++) {
+              		System.out.print(myList.get(i) + "          ");
+              		if ((i + 1) % 5 == 0){
+        			System.out.println("");
+        					}
+              			}
+            }
+        	else if (sc.equals("x")) {
+              System.out.println("Game over");
+            }
+            
+            else  {
+    	        System.out.println("Invalid input, try again");
+    	        
+    	     }
+	}
+	
+}
+}
+	
