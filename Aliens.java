@@ -16,7 +16,7 @@ import javafx.geometry.Rectangle2D;
 public class Aliens {
     //instance variables
     private static Image enemiesV = new Image(
-            "alien1-2.gif");
+            "resources/alien1-2.gif");
 
     private static boolean rightEnemy = true;
     private int MOV = 0;
