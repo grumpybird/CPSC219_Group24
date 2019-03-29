@@ -1,20 +1,6 @@
-/**
-* CPSC 219 Group 24 Project: Alien Class
-*
-* @author: Paula Almeida
-*          Gabriel Atienza
-*          Sharon Chan
-*          Hayden Kerr
-*          Theresa Lam
-*
-* @date: March 29, 2019.
-*
-* @version: DEMO 3
-*
-*/
-
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -24,40 +10,38 @@ import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.geometry.Rectangle2D;
 
-/**
-* Class represents the alien in the game.
-* Alien class controls the movement of the alien
-* as well as attributes such as:
-* lives, position, and apperance. 
-*
-* This class only focuses on the movement and health of the alien.
-*
-*/
+
 
 //implement Aliens in the main app under stage to implement variables, then call constructor
 public class Aliens {
-    
-    //Instance Variables
-    private Image enemiesV = new Image(
+    //instance variables
+    private static Image enemiesV = new Image(
             "alien1-2.gif");
-    boolean rightEnemy = true;
+
+    static boolean rightEnemy = true;
      int MOV = 0;
-     int ENEMY_EDGE = 40;
-     int ENEMY_ROW = 5;
-     int ENEMY_COLUMN = 7;
-     int SPEED = 3;
-     double Sprite_BoardW = 800;
+
+  
+     static int ENEMY_EDGE = 40;
+     static int ENEMY_ROW = 5;
+     static int ENEMY_COLUMN = 7;
+     static int SPEED = 3;
+     int score = 0;
+     
+     static double Sprite_BoardW = 800;
+
      static Rectangle pointer = new Rectangle();
+   
+    
+
+
      ImageView[] enemies = new ImageView[ENEMY_COLUMN * ENEMY_ROW];
      int updateTime = 65;
-    
 
+    public Rectangle2D getBoundary(){
+        return new Rectangle2D(1, 1, 1, 1);
+    }
 
- /**
- * Movement method sets the image array for the aliens in the stage.
- * @param Pane hbox that allows it when called in the main class SpaceInvaders, whatever
- * the given argument is it will attach the aliens to it.
- */ 
     public void movement(Pane hbox) {
         for (int j = 0; j < ENEMY_ROW ; j++) {
             for (int i = 0; i < ENEMY_COLUMN; i++) {
@@ -79,11 +63,8 @@ public class Aliens {
     }
 
 
-/**
-* movementCore checks to see if the enemy or avatar is moving left or right
-and then checking for collision as it hits the right side
-*/ 
-    public void movementCore() {
+
+    public void movementCore(Bullet bulletc, Text punt, boolean newLevel, Pane pane) {
         if (rightEnemy) { //check if the enemy is going toward right
             if (pointer.getX() + ENEMY_EDGE >= Sprite_BoardW) { //check collision on right edge
                 rightEnemy = false;
@@ -116,6 +97,20 @@ and then checking for collision as it hits the right side
                 }
             }
             pointer.setX(pointer.getX() - SPEED);
+        }
+        
+        if (bulletc != null) {
+            score += bulletc.getScore();
+            punt.setText("Score: " + score);
+        }
+        if (score % 50 * 49 == 0 && score >= 50 * 49) {
+            if (newLevel) {
+                movement(pane);
+                newLevel = false;
+            }
+        }
+        if (score % 50 * 49 > 0 && score > 50 * 49) {
+            newLevel = true;
         }
      
      
