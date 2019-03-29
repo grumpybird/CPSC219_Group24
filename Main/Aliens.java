@@ -28,17 +28,17 @@ public class Aliens {
      private static int ENEMY_ROW = 5;
      private static int ENEMY_COLUMN = 7;
      private static int SPEED = 3;
-     private int score = 0;
+     int score = 0;
      
      private static double Sprite_BoardW = 800;
-
-     private static Rectangle pointer = new Rectangle();
+    
+     static Rectangle pointer = new Rectangle();
    
     
 
 
-     private ImageView[] enemies = new ImageView[ENEMY_COLUMN * ENEMY_ROW];
-     private int updateTime = 65;
+     ImageView[] enemies = new ImageView[ENEMY_COLUMN * ENEMY_ROW];
+     int updateTime = 65;
 
     public Rectangle2D getBoundary(){
         return new Rectangle2D(1, 1, 1, 1);
