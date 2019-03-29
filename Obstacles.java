@@ -58,7 +58,7 @@ public class Obstacles {
     private int barrierX;
     private int barrier;
 
-    private static final Image BARRIER_IMAGE = new Image("Barrier.png");
+    private static final Image BARRIER_IMAGE = new Image("resources/Barrier.png");
     private static final int BARRIER_WIDTH = 100;
     private static final int BARRIER_HEIGHT = 65;
     private static final int BARRIER_Y = 635;
