@@ -46,7 +46,7 @@ public class Avatar {
 
 	// Instance variables
  	private static final double INITIAL_AVATAR_X = 362.5;
- 	private static final double AVATAR_Y = 550;
+ 	private static final double AVATAR_Y = 750;
  	private static final int AVATAR_VELOCITY_X = 14;
  	private static final Image SPRITE = new Image("sprite.png");
  	private static final int SPRITE_WIDTH = 75;
@@ -66,7 +66,7 @@ public class Avatar {
 	// drawAvatar method uses the GraphicsContext to draw the sprite for the avatar, and overwrite the previous
 	// Instance of the sprite
 	public void drawAvatar(GraphicsContext gc){
-        gc.fillRect(0, 550, 800, 50);
+        gc.fillRect(0, 750, 800, 50);
         gc.drawImage(SPRITE, locationX, AVATAR_Y, SPRITE_WIDTH, SPRITE_HEIGHT);
     }
 
