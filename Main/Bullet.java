@@ -75,6 +75,7 @@ public class Bullet {
     /**
     * takes enemies[] as an argument to check for collision of the enemies respective to the obstacles and avatar
     * @param enemies[]
+    */
     private boolean collisioncheck(ImageView enemies[]) {
         for (int i = 0; i < enemies.length; i++) {
             if (r != null && enemies[i] != null) {
