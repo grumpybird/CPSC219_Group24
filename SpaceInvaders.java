@@ -33,6 +33,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -59,6 +60,7 @@ public class SpaceInvaders extends Application {
     VBox box = new VBox();
     Pane pane = new Pane();
     HBox hbox = new HBox();
+    Pane pane2 = new Pane();
     
     Aliens aliensprite = new Aliens();
     
@@ -67,7 +69,8 @@ public class SpaceInvaders extends Application {
     Bullet bulletc;
     Image shipV = new Image("sprite.png");
     ImageView ship = new ImageView(shipV);
-    
+ 
+    Text textscore = new Text("SCORE: " + aliensprite.score);
     
     //
     
@@ -75,19 +78,20 @@ public class SpaceInvaders extends Application {
     boolean rightEnemy = true;
     boolean bulletIsAlive = false;
     boolean newLevel = true;
+    
     //
     
     private static final double BOARD_WIDTH = 800;
     private static final double BOARD_HEIGHT = 800;
 
-    private static HashSet<String> currentlyActiveKeys;
+    //private static HashSet<String> currentlyActiveKeys;
     private static Scene boardScene;
-    private static Avatar player;
+    //private static Avatar player;
     private static GraphicsContext gc;
     private static Obstacles barrier1;
     private static Obstacles barrier2;
     private static Obstacles barrier3;
-    private Projectile fromAvatar;
+    //private Projectile fromAvatar;
 
 /**
  * It uses an image view to store the images into an arraylist of the aliens, sets the width of the blocks using the instance
@@ -117,7 +121,9 @@ public class SpaceInvaders extends Application {
         Canvas canvas = new Canvas(BOARD_WIDTH, BOARD_HEIGHT);
        
         root.getChildren().add(canvas);
+        root.getChildren().add(pane2);
        root.getChildren().add(pane);
+       
        pane.setLayoutY(50);
        
         gc = canvas.getGraphicsContext2D();
@@ -129,6 +135,13 @@ public class SpaceInvaders extends Application {
         ship.setX(100);
         ship.setY(680);
         pane.getChildren().add(ship);
+        pane2.getChildren().add(textscore);
+          
+        textscore.setFont(Font.font("Comic Sans MS", 24));
+        textscore.setFill(Color.LIMEGREEN);
+        
+        textscore.setX(500);
+        textscore.setY(25);
         //
         
        // PrepareActionHandler();
@@ -140,12 +153,12 @@ public class SpaceInvaders extends Application {
         Font theFont = Font.font("Comic Sans MS", 24);
         gc.setFont(theFont);
         gc.fillText("LIVES: ", 100, 25);
-        gc.fillText("SCORE: ", 500, 25);
+        //gc.fillText("SCORE: ", 500, 25);
 
         aliensprite.movement(pane);
 
         Duration dI = new Duration(aliensprite.updateTime);
-        KeyFrame f = new KeyFrame(dI, e -> aliensprite.movementCore());
+        KeyFrame f = new KeyFrame(dI, e -> aliensprite.movementCore(bulletc, textscore, newLevel, pane));
         Timeline tl = new Timeline(f);
         tl.setCycleCount(Animation.INDEFINITE);
         tl.play();
