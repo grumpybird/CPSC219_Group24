@@ -37,6 +37,9 @@ import javafx.event.EventHandler;
 import javafx.util.Duration;
 import java.util.HashSet;
 
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+
 /**
  * Space invaders is our main class, which handles most of the functions. It starts the game and handles input from user
  *It draws all the objects, such as aliens, barriers and avatar using javafx. At the current stafe it handles animation
@@ -48,10 +51,20 @@ public class SpaceInvaders extends Application {
 
     //Instance Variables
     Group root = new Group();
-    Projectile fromAvatar;
-
+    Group root2 = new Group();
+    VBox box = new VBox();
+    
+    HBox hbox = new HBox();
+    
     Aliens aliensprite = new Aliens();
-
+    
+    
+    Bullet bulletc;
+    
+    boolean rightEnemy = true;
+    boolean bulletIsAlive = false;
+    boolean newLevel = true;
+    
     private static final double BOARD_WIDTH = 800;
     private static final double BOARD_HEIGHT = 800;
 
@@ -62,6 +75,7 @@ public class SpaceInvaders extends Application {
     private static Obstacles barrier1;
     private static Obstacles barrier2;
     private static Obstacles barrier3;
+    private Projectile fromAvatar;
 
 /**
  * It uses an image view to store the images into an arraylist of the aliens, sets the width of the blocks using the instance
@@ -83,14 +97,21 @@ public class SpaceInvaders extends Application {
     public void start(Stage primaryStage) {
 
         primaryStage.setTitle("Space Invaders");
-
+        
 
         boardScene = new Scene(root, BOARD_WIDTH, BOARD_HEIGHT);
         primaryStage.setScene(boardScene);
 
         Canvas canvas = new Canvas(BOARD_WIDTH, BOARD_HEIGHT);
-        root.getChildren().add(canvas);
+       
+        root2.getChildren().add(canvas);
+        root.getChildren().add(root2);
+        root.getChildren().add(hbox);
         gc = canvas.getGraphicsContext2D();
+        
+        
+        
+        root.getChildren().add(box);
 
         PrepareActionHandler();
 
@@ -103,7 +124,7 @@ public class SpaceInvaders extends Application {
         gc.fillText("LIVES: ", 100, 25);
         gc.fillText("SCORE: ", 500, 25);
 
-        aliensprite.movement(root);
+        aliensprite.movement(root2);
 
         Duration dI = new Duration(aliensprite.updateTime);
         KeyFrame f = new KeyFrame(dI, e -> aliensprite.movementCore());
@@ -124,9 +145,16 @@ public class SpaceInvaders extends Application {
         player = new Avatar();
         player.drawAvatar(gc);
 
+
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
                 actionHandler();
+                fromAvatar = new Projectile();
+                if (fromAvatar.intersects(barrier1)) {
+                    fromAvatar.setIntersect(true);
+                    System.out.println("shot hit");
+                    fromAvatar = null;
+                }
             }
         }.start();
 
@@ -172,20 +200,7 @@ public class SpaceInvaders extends Application {
         }
 
         if (currentlyActiveKeys.contains("SPACE")) {
-            fromAvatar = new Projectile();
             fromAvatar.avatarShoot(player, gc);
-        }
-    }
-
-    public void intersects(Obstacles anObstacle, Aliens anAlien) {
-        if (anAlien.getBoundary().intersects(fromAvatar.getBoundary())) {
-            fromAvatar.setIntersect(true);
-        } else if (anObstacle.getBoundary1().intersects(fromAvatar.getBoundary())) {
-            fromAvatar.setIntersect(true);
-        } else if (anObstacle.getBoundary2().intersects(fromAvatar.getBoundary())) {
-            fromAvatar.setIntersect(true);
-        } else if (anObstacle.getBoundary3().intersects(fromAvatar.getBoundary())) {
-            fromAvatar.setIntersect(true);
         }
     }
 }
