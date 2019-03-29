@@ -1,4 +1,3 @@
-package Main;
 
 /* CPSC 219 Group 24 Project: Testing Points in SpaceInvader
 *
