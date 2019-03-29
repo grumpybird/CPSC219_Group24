@@ -67,7 +67,7 @@ public class SpaceInvaders extends Application {
    
     //exp
     private Bullet bulletc;
-    private Image shipV = new Image("sprite.png");
+    private Image shipV = new Image("resources/sprite.png");
     private ImageView ship = new ImageView(shipV);
  
     private Text textscore = new Text("SCORE: " + aliensprite.score);
