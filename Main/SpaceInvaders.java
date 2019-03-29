@@ -256,6 +256,7 @@ public class SpaceInvaders extends Application {
     }
 //
 }
+
 /**
  * Sets the limits of the movement of the alien and the blank rectangle (spacing between aliens).
  * Also sets condition for the aliens to move downwards after hitting the sides.
