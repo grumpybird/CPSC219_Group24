@@ -28,16 +28,20 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.event.EventHandler;
 import javafx.util.Duration;
 import java.util.HashSet;
 
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 /**
@@ -53,17 +57,25 @@ public class SpaceInvaders extends Application {
     Group root = new Group();
     Group root2 = new Group();
     VBox box = new VBox();
-    
+    Pane pane = new Pane();
     HBox hbox = new HBox();
     
     Aliens aliensprite = new Aliens();
     
-    
+   
+    //exp
     Bullet bulletc;
+    Image shipV = new Image("sprite.png");
+    ImageView ship = new ImageView(shipV);
     
+    
+    //
+    
+    //exp
     boolean rightEnemy = true;
     boolean bulletIsAlive = false;
     boolean newLevel = true;
+    //
     
     private static final double BOARD_WIDTH = 800;
     private static final double BOARD_HEIGHT = 800;
@@ -104,16 +116,22 @@ public class SpaceInvaders extends Application {
 
         Canvas canvas = new Canvas(BOARD_WIDTH, BOARD_HEIGHT);
        
-        root2.getChildren().add(canvas);
-        root.getChildren().add(root2);
-        root.getChildren().add(hbox);
+        root.getChildren().add(canvas);
+       root.getChildren().add(pane);
+       pane.setLayoutY(50);
+       
         gc = canvas.getGraphicsContext2D();
         
         
+        //exp
+        ship.setPreserveRatio(true);
+        ship.setFitWidth(80);
+        ship.setX(100);
+        ship.setY(680);
+        pane.getChildren().add(ship);
+        //
         
-        root.getChildren().add(box);
-
-        PrepareActionHandler();
+       // PrepareActionHandler();
 
         gc.setFill(Color.BLACK);
         gc.fillRect(0, 0, BOARD_WIDTH, BOARD_HEIGHT);
@@ -124,14 +142,15 @@ public class SpaceInvaders extends Application {
         gc.fillText("LIVES: ", 100, 25);
         gc.fillText("SCORE: ", 500, 25);
 
-        aliensprite.movement(root2);
+        aliensprite.movement(pane);
 
         Duration dI = new Duration(aliensprite.updateTime);
         KeyFrame f = new KeyFrame(dI, e -> aliensprite.movementCore());
         Timeline tl = new Timeline(f);
         tl.setCycleCount(Animation.INDEFINITE);
         tl.play();
-
+        boardScene.setOnKeyPressed(e -> keyboardManage(e));
+        
         barrier1 = new Obstacles(1);
         barrier2 = new Obstacles(2);
         barrier3 = new Obstacles(3);
@@ -142,21 +161,21 @@ public class SpaceInvaders extends Application {
 
         gc.setFill(Color.BLACK);
 
-        player = new Avatar();
-        player.drawAvatar(gc);
+        //player = new Avatar();
+      // player.drawAvatar(gc);
 
 
-        new AnimationTimer() {
-            public void handle(long currentNanoTime) {
-                actionHandler();
-                fromAvatar = new Projectile();
-                if (fromAvatar.intersects(barrier1)) {
-                    fromAvatar.setIntersect(true);
-                    System.out.println("shot hit");
-                    fromAvatar = null;
-                }
-            }
-        }.start();
+      //  new AnimationTimer() {
+        //    public void handle(long currentNanoTime) {
+         //       actionHandler();
+         //       fromAvatar = new Projectile();
+          //      if (fromAvatar.intersects(barrier1)) {
+          //          fromAvatar.setIntersect(true);
+          //          System.out.println("shot hit");
+           //         fromAvatar = null;
+          //      }
+          //  }
+      //  }.start();
 
         primaryStage.show();
     }
@@ -166,43 +185,61 @@ public class SpaceInvaders extends Application {
      * handler to user press more than 1 key at a time
      */
 
-    public static void PrepareActionHandler() {
+  //  public static void PrepareActionHandler() {
 
-        currentlyActiveKeys = new HashSet<String>();
+        //currentlyActiveKeys = new HashSet<String>();
 
-        boardScene.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            public void handle(KeyEvent event) {
-                currentlyActiveKeys.add(event.getCode().toString());
-            }
-        });
-
-        boardScene.setOnKeyReleased(new EventHandler<KeyEvent>() {
-            public void handle(KeyEvent event) {
-                currentlyActiveKeys.remove(event.getCode().toString());
-            }
-        });
-    }
+       // boardScene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+       //     public void handle(KeyEvent event) {
+      //          currentlyActiveKeys.add(event.getCode().toString());
+     //       }
+      //  });
+//
+      //  boardScene.setOnKeyReleased(new EventHandler<KeyEvent>() {
+      //      public void handle(KeyEvent event) {
+      //          currentlyActiveKeys.remove(event.getCode().toString());
+      //      }
+     //   });
+   // }
 
     /**
      * Moves take the input in the list and initiates it onto the avatar. Can move left, right and eventually shoots.
      * avatar moves by removing previous location of avatar and drawing new location of avatar in its place.
      */
-    public void actionHandler() {
+   // public void actionHandler() {
+    	
+    	
 
-        if (currentlyActiveKeys.contains("LEFT")) {
-            player.moveLeft();
-            player.drawAvatar(gc);
-        }
+      // if (currentlyActiveKeys.contains("LEFT")) {
+    	//   player.moveLeft();
+         //player.drawAvatar(gc);
+        //}
 
-        if (currentlyActiveKeys.contains("RIGHT")) {
-            player.moveRight();
-            player.drawAvatar(gc);
-        }
+       // if (currentlyActiveKeys.contains("RIGHT")) {
+         //   player.moveRight();
+           // player.drawAvatar(gc);
+        //}
 
-        if (currentlyActiveKeys.contains("SPACE")) {
-            fromAvatar.avatarShoot(player, gc);
+        //if (currentlyActiveKeys.contains("SPACE")) {
+          //  fromAvatar.avatarShoot(player, gc);
+        //}
+    //}
+    
+    //exp
+    public void keyboardManage(KeyEvent ke) {
+        if (ke.getCode() == KeyCode.D) {
+            double x = ship.getX();
+            x += 10;
+            ship.setX(x);
+        } else if (ke.getCode() == KeyCode.A) {
+            double x = ship.getX();
+            x -= 10;
+            ship.setX(x);
+        } else if (ke.getCode() == KeyCode.SPACE) { // shoot
+            bulletc = new Bullet(10, 50, ship.getX(), aliensprite.enemies, pane);
         }
     }
+//
 }
 /**
  * Sets the limits of the movement of the alien and the blank rectangle (spacing between aliens).
