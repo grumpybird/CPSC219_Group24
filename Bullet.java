@@ -37,11 +37,11 @@ import javafx.util.Duration;
 public class Bullet {
 
     // Instance Variables:
-    boolean bulletIsAlive = true;
-    Rectangle r = null;
-    Pane p;
-    int incr;
-    static Rectangle rect = Aliens.pointer;
+    private boolean bulletIsAlive = true;
+    private Rectangle r = null;
+    private Pane p;
+    private int incr;
+    private static Rectangle rect = Aliens.pointer;
 
     /**
     * Takes x,y, pos, v[] and p as arguments
