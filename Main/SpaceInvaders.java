@@ -1,3 +1,5 @@
+package Main;
+
 /**
  * CPSC 219 Group 24 Project: Board Class
  *
