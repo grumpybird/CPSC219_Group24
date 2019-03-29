@@ -120,6 +120,7 @@ public class Obstacles {
 
     public void barrierHit(){
         barrierHealth -= 1;
+  
     }
 }
 
