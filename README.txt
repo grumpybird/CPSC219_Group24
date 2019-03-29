@@ -89,3 +89,5 @@ To locate DEMO3, you will have to go to our github respitory and download all th
 
 FOR DEMO 3 REFERENCES USED: 
 
+(18) Space Invaders Game by Shindanaide. Date accessed: March 28th, 2019.
+https://github.com/Shindanaide/SpaceInvaders?fbclid=IwAR3U7CdlqdrY7XtfpggYKJnRUT1srazyE1mFN_zpYgg2H5mYoIZL8oZieZo
