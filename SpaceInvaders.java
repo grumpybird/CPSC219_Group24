@@ -55,29 +55,29 @@ import javafx.scene.layout.VBox;
 public class SpaceInvaders extends Application {
 
     //Instance Variables
-    Group root = new Group();
-    Group root2 = new Group();
-    VBox box = new VBox();
-    Pane pane = new Pane();
-    HBox hbox = new HBox();
-    Pane pane2 = new Pane();
+    private Group root = new Group();
+    private Group root2 = new Group();
+    private VBox box = new VBox();
+    private Pane pane = new Pane();
+    private HBox hbox = new HBox();
+    private Pane pane2 = new Pane();
     
-    Aliens aliensprite = new Aliens();
+    private Aliens aliensprite = new Aliens();
     
    
     //exp
-    Bullet bulletc;
-    Image shipV = new Image("sprite.png");
-    ImageView ship = new ImageView(shipV);
+    private Bullet bulletc;
+    private Image shipV = new Image("sprite.png");
+    private ImageView ship = new ImageView(shipV);
  
-    Text textscore = new Text("SCORE: " + aliensprite.score);
+    private Text textscore = new Text("SCORE: " + aliensprite.score);
     
     //
     
     //exp
-    boolean rightEnemy = true;
-    boolean bulletIsAlive = false;
-    boolean newLevel = true;
+    private boolean rightEnemy = true;
+    private boolean bulletIsAlive = false;
+    private boolean newLevel = true;
     
     //
     
