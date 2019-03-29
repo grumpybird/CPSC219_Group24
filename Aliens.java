@@ -2,6 +2,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.geometry.Rectangle2D;
@@ -10,30 +13,31 @@ import javafx.geometry.Rectangle2D;
 //implement Aliens in the main app under stage to implement variables, then call constructor
 public class Aliens {
     //instance variables
-    Image enemiesV = new Image(
-            "alien1.gif");
+    private Image enemiesV = new Image(
+            "alien1-2.gif");
 
     boolean rightEnemy = true;
-    public int MOV = 0;
-    
-    int ENEMY_EDGE = 40;
-    int ENEMY_ROW = 5;
-    int ENEMY_COLUMN = 7;
-    int SPEED = 3;
+     int MOV = 0;
 
-    double Sprite_BoardW = 800;
+  
+     int ENEMY_EDGE = 40;
+     int ENEMY_ROW = 5;
+     int ENEMY_COLUMN = 7;
+     int SPEED = 3;
 
-    static Rectangle pointer = new Rectangle();
+     double Sprite_BoardW = 800;
+
+     static Rectangle pointer = new Rectangle();
 
 
-    ImageView[] enemies = new ImageView[ENEMY_COLUMN * ENEMY_ROW];
-    int updateTime = 65;
+     ImageView[] enemies = new ImageView[ENEMY_COLUMN * ENEMY_ROW];
+     int updateTime = 65;
 
     public Rectangle2D getBoundary(){
         return new Rectangle2D(1, 1, 1, 1);
     }
 
-    public void movement(Group root) {
+    public void movement(Pane hbox) {
         for (int j = 0; j < ENEMY_ROW ; j++) {
             for (int i = 0; i < ENEMY_COLUMN; i++) {
                 enemies[j * ENEMY_COLUMN + i] = new ImageView(enemiesV);
@@ -41,7 +45,7 @@ public class Aliens {
                 enemies[j * ENEMY_COLUMN + i].setX(i * 50);
                 enemies[j * ENEMY_COLUMN + i].setY(j * 50);
                 enemies[j * ENEMY_COLUMN + i].setFitWidth(ENEMY_EDGE);
-                root.getChildren().add(enemies[j * ENEMY_COLUMN + i]);
+                hbox.getChildren().add(enemies[j * ENEMY_COLUMN + i]);
                 if (i == ENEMY_COLUMN - 1 && j == 0) {
                     pointer.setWidth(ENEMY_EDGE);
                     pointer.setHeight(ENEMY_EDGE);
@@ -89,9 +93,11 @@ public class Aliens {
             }
             pointer.setX(pointer.getX() - SPEED);
         }
-
-
+     
+     
     }
+
+    
 
 
 }
