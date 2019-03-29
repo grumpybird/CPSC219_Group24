@@ -1,4 +1,26 @@
+/** 
+* CPSC 219 Group 24 Project: Bullet Class
+*
+* @author: Paula Almeida
+*          Gabriel Atienza
+*          Sharon Chan
+*          Hayden Kerr
+*          Theresa Lam
+*
+* @date: March 29, 2019.
+*
+* @version: DEMO 3
+*
+*/
 
+/**
+* Class represents the bullet used in the game.
+* It will be used to set up the bullet's location, 
+* collisions of the bullet as well as removing the bullet once shot and
+* getting score when collisions happens.
+* Methods will track the location, collision and score.
+*
+*/ 
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -8,14 +30,25 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
+/*
+* Each class of Bullet will take multiple instance variables.
+*/ 
+
 public class Bullet {
 
+    // Instance Variables:
     boolean bulletIsAlive = true;
     Rectangle r = null;
     Pane p;
     int incr;
     static Rectangle rect = Aliens.pointer;
 
+    /**
+    * Takes x,y, pos, v[] and p as arguments
+    * @param x and y tells the constructure the location of where the starting position of the avatar will be
+    * @param pos is the position of the avatar
+    * @param p allows to print the rectangle on the pane based on the position of x and y of the avatar
+    */
     public Bullet(double x, double y, double pos, ImageView v[], Pane p) {
         if (r == null) {
             this.p = p;
@@ -37,6 +70,9 @@ public class Bullet {
         }
     }
 
+    /**
+    * takes enemies[] as an argument to check for collision of the enemies respective to the obstacles and avatar
+    * @param enemies[]
     private boolean collisioncheck(ImageView enemies[]) {
         for (int i = 0; i < enemies.length; i++) {
             if (r != null && enemies[i] != null) {
