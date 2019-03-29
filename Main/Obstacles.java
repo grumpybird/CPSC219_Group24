@@ -1,3 +1,4 @@
+package Main;
 
 /**
  * CPSC 219 Group 24 Project: Obstacles Class
