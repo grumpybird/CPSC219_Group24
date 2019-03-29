@@ -53,7 +53,7 @@ public class SpaceInvaders extends Application {
     Aliens aliensprite = new Aliens();
 
     private static final double BOARD_WIDTH = 800;
-    private static final double BOARD_HEIGHT = 600;
+    private static final double BOARD_HEIGHT = 1000;
 
     private static HashSet<String> currentlyActiveKeys;
     private static Scene boardScene;
