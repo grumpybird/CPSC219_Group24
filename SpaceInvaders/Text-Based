@@ -86,7 +86,7 @@ public static void main(String[] args) {
 	}
 	Scanner input = new Scanner(System.in);
     String sc = "";
-	while (sc.equals("x") == false) {
+	while (sc.equals("x") == false && myList.contains("*") == true) {
 		System.out.println("Move character (left 'a' or right 'd'), 'f' to fire and 'x' to quit game.");
         sc = input.next();	
         if (sc.equals("a")) {
@@ -136,7 +136,11 @@ public static void main(String[] args) {
         			System.out.println("");
         					}
               			}
+              	if (myList.contains("*") == false) {
+              		System.out.println("YOU WON!!!");
+              	}
             }
+        	
         	else if (sc.equals("x")) {
               System.out.println("Game over");
             }
