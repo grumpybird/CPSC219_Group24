@@ -1,8 +1,21 @@
+/**
+ * CPSC 219 Group 24 Project: MovementT Class
+ * 
+ * @author: Paula Almeida
+ *	    Gabriel Atienza
+ *	    Sharon Chan
+ *	    Hayden Kerr
+ *	    Theresa Lam
+ *
+ * @date: March 1, 2019.
+ * @version: Textbased Space Invaders class for interactive demo.
+
+
 import java.util.Collections;
 
-public class Obstacles extends SpaceInvadersT{
+public class MovementT extends SpaceInvadersT{
 	
-public Obstacles () {
+public MovementT () {
 	super(getLocation(), getTargetQuads(), getPoints());
 	}
 
