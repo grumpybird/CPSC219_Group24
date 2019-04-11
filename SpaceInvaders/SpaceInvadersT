@@ -111,12 +111,12 @@ public static void main(String[] args) {
 		System.out.println("Move character (left 'a' or right 'd'), 'f' to fire and 'x' to quit game.");
         sc = input.next();	
         if (sc.equals("a")) {
-        	Obstacles b = new Obstacles();
+        	Movement b = new Movement();
    		 	b.moveLeft();
         	}	
         	
         if (sc.equals("d")) {
-        		Obstacles b = new Obstacles();
+        		Movement b = new Movement();
        		 	b.moveRight();
         	}
         	
