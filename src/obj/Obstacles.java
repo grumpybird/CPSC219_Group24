@@ -9,9 +9,9 @@ package obj;
  *	        Hayden Kerr
  *	        Theresa Lam
  *
- * @date: March 11, 2019.
+ * @date: April 11, 2019.
  *
- * @version: DEMO 2
+ * @version: Obstacles Class of Space Invaders Game (GUI) INTERACTIVE DEMO
  *
  */
 
@@ -38,6 +38,7 @@ import javafx.geometry.Rectangle2D;
  * BARRIER2_X, and BARRIER3_X
  */
 public class Obstacles {
+	//Instance Variables
     private int barrierHealth;
     private int counter = 0;
     private boolean barrierHit;
@@ -108,4 +109,3 @@ public class Obstacles {
   
     }
 }
-
