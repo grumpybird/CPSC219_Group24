@@ -9,6 +9,7 @@
  *
  * @date: March 1, 2019.
  * @version: Textbased Space Invaders class for interactive demo.
+ */
 
 
 import java.util.Collections;
@@ -16,7 +17,7 @@ import java.util.Collections;
 public class MovementT extends SpaceInvadersT{
 
 //Constructor	
-public MovementT () {
+public MovementT () { //gets current state of the game, ie: location of everything, points and state of all elements in the array.
 	super(getLocation(), getTargetQuads(), getPoints());
 	}
 //Mutator Method
@@ -28,7 +29,7 @@ public MovementT () {
 * if they reach the limit, an output message tells the user they can't go any farther, and repromts for valid input.
 */
 public static void moveRight() {
-	if (getLocation() < 62) {
+	if (getLocation() < 62) { //makes sure avatar cannot shift along any other row than the 9th, or off the board.
 		Collections.swap(myList, getLocation(), getLocation() + 1);
 		location = location + 1;
 		System.out.println ("                            points:" + getPoints());
@@ -52,8 +53,8 @@ public static void moveRight() {
 * if they reach the limit, an output message tells the user they can't go any farther, and repromts for valid input.
 */
 public static void moveLeft () {
-	if (getLocation() > 56) {
-		Collections.swap(myList, getLocation(), getLocation() - 1);
+	if (getLocation() > 56) {//makes sure avatar cannot shift along any other row than the 9th, or off the board.
+		Collections.swap(myList, getLocation(), getLocation() - 1); 
 		location = location - 1;
 		System.out.println ("                            points:" + getPoints());
 		for (int i = 0; i < myList.size(); i++) {
