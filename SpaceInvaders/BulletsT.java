@@ -8,7 +8,7 @@
  *	    Theresa Lam
  *
  * @date: March 1, 2019.
- * @version: Textbased Space Invaders class for interactive demo.
+ * @version: Textbased Bullets class for interactive demo.
  */
 public class BulletsT extends SpaceInvadersT{
 // Constructor
