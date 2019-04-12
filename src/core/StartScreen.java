@@ -23,30 +23,30 @@ import javafx.scene.layout.Pane;
 
 public class StartScreen{
 	//Instance Variables
-    private Group root = new Group();
+    private Group root = new Group(); 
     private Pane pane = new Pane();
-    
+    //Set board width and height
     private static final double BOARD_WIDTH = 800;
     private static final double BOARD_HEIGHT = 800;
-
     private static Scene startScene;
     private static GraphicsContext gc;
-
+	
+// Method
     public Scene getBoardScene() {
 
-    	startScene = new Scene(root, BOARD_WIDTH, BOARD_HEIGHT);
-        Canvas canvas = new Canvas(BOARD_WIDTH, BOARD_HEIGHT);
+    	startScene = new Scene(root, BOARD_WIDTH, BOARD_HEIGHT);  //set new scence
+        Canvas canvas = new Canvas(BOARD_WIDTH, BOARD_HEIGHT); // set new canvas
         
-        root.getChildren().add(canvas);
-        root.getChildren().add(pane);
+        root.getChildren().add(canvas); //add canvas to root
+        root.getChildren().add(pane); // add pane to root
         
         gc = canvas.getGraphicsContext2D();
-        gc.setFill(Color.BLACK);
-        gc.fillRect(0, 0, BOARD_WIDTH, BOARD_HEIGHT);
+        gc.setFill(Color.BLACK); // Set color to black
+        gc.fillRect(0, 0, BOARD_WIDTH, BOARD_HEIGHT); // make background balck
 
-        gc.setFill(Color.LIMEGREEN);
+        gc.setFill(Color.LIMEGREEN); // change color to lime green
         
-        Font spaceinvaders = Font.font("Courier", 14);
+        Font spaceinvaders = Font.font("Courier", 14); // setting font and style
         gc.setFont(spaceinvaders);
         gc.fillText( "                          _                     _               \n" + 
         		"                         (_)                   | |              \n" + 
@@ -55,9 +55,9 @@ public class StartScreen{
         		"\\__ \\ |_) | (_| | (_|  __/ | | | \\ V / (_| | (_| |  __/ |  \\__ \\\n" + 
         		"|___/ .__/ \\__,_|\\___\\___|_|_| |_|\\_/ \\__,_|\\__,_|\\___|_|  |___/\n" + 
         		"    | |                                                         \n" + 
-        		"    |_|                                                         ", 100, 50);
+        		"    |_|                                                         ", 100, 50); 
         
-        Font group24 = Font.font("Courier", 8);
+        Font group24 = Font.font("Courier", 8); //change font size
         gc.setFont(group24);
         gc.fillText("                                                                   \n" + 
         		"  ,ad8888ba,  88888888ba    ,ad8888ba,   88        88 88888888ba   \n" + 
@@ -80,7 +80,7 @@ public class StartScreen{
         		"d8\"               88    \n" + 
         		"88888888888       88    ", 100, 300);
         
-        Font alien = Font.font("Courier", 8);
+        Font alien = Font.font("Courier", 8); // change font size
         gc.setFont(alien);
         gc.fillText("░░░░░░░░░░░░░░░░░\n" + 
         		"░░░▄░▀▄░░░▄▀░▄░░░\n" + 
