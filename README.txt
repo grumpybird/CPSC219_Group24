@@ -91,3 +91,12 @@ FOR DEMO 3 REFERENCES USED:
 
 (18) Space Invaders Game by Shindanaide. Date accessed: March 28th, 2019.
 https://github.com/Shindanaide/SpaceInvaders?fbclid=IwAR3U7CdlqdrY7XtfpggYKJnRUT1srazyE1mFN_zpYgg2H5mYoIZL8oZieZo
+
+FOR INTERACTIVE DEMO TEXT BASED VERSION
+
+For this demo we have the text based version that take user input to move, shoot or exit.
+Inheritance is used to delegat the actions to respective classes, and are moved out of the main class to allow better legibility and further organize the code. 
+
+The GITHUB LINK: https://github.com/grumpybird/CPSC219_Group24/tree/master/SpaceInvaders
+To locate the text based bersion , you wll have to goto the github link and down load all the files from the folder as a zip file and compile it through command javac. After compilation run program with java SpaceInvaders in console. Or in Eclipse by importing all the class files and running it
+
