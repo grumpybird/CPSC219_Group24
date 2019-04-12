@@ -92,11 +92,22 @@ FOR DEMO 3 REFERENCES USED:
 (18) Space Invaders Game by Shindanaide. Date accessed: March 28th, 2019.
 https://github.com/Shindanaide/SpaceInvaders?fbclid=IwAR3U7CdlqdrY7XtfpggYKJnRUT1srazyE1mFN_zpYgg2H5mYoIZL8oZieZo
 
-FOR INTERACTIVE DEMO TEXT BASED VERSION
+FOR INTERACTIVE DEMO:
 
+For the the interactive demo, there is both working text-based and GUI version of the code. The GUI version can be found in the GitHub respitory through the src folder. Within the src folder there are 4 subfolders; core, main, obj and res. In the core package it consists classes that manages and runs the display of what is shown when the game is launched. The main package includes the main class that launches the game. The obj package consists the aliens, obstacles, and bullets. The last package res contains the images that are used throughout the code. 
 For this demo we have the text based version that take user input to move, shoot or exit.
 Inheritance is used to delegat the actions to respective classes, and are moved out of the main class to allow better legibility and further organize the code. 
 
 The GITHUB LINK: https://github.com/grumpybird/CPSC219_Group24/tree/master/SpaceInvaders
-To locate the text based bersion , you wll have to goto the github link and down load all the files from the folder as a zip file and compile it through command javac. After compilation run program with java SpaceInvaders in console. Or in Eclipse by importing all the class files and running it
 
+To locate the interactive demo, you will have to go to our github respitory and download all the files from the src folder into a zip file and compile it through command javac and after compilation, run the program with java SpaceInvaders in console. Or in Eclipse by importing all the class files and running it through the IDE. To locate the text based version, you will find it under the Space Invaders file located in the github respitory which can be downloaded and ran against the console through compilation with the command javac and then running the program with java SpaceInvaders. Or in Eclipse by importing all the class flies and running it. 
+
+FOR INTERACTIVE DEMO REFERENCES USED:
+(19) 004_switchingScenes by Bucky Robers. Date accessed: April 11, 2019. 
+https://github.com/buckyroberts/Source-Code-from-Tutorials/blob/master/JavaFX/004_switchingScenes/Main.java
+
+(20) Java2DSpaceInvaders by leonardo-ono. Date accessed: April 11, 2019. 
+https://github.com/leonardo-ono/Java2DSpaceInvaders
+
+(21) Space-Invaders-Tutorial-Youtube by Andrew Murray. Date accessed: April 11, 2019.
+https://github.com/Dregron/Space-Invaders-Tutorial-YouTube/tree/master/src/com/dregronprogram
