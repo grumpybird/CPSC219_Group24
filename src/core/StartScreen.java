@@ -20,7 +20,12 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.layout.Pane;
-
+/**
+ * 
+ * The class StartScreen creates scene when the application is called.
+ * It then adds the various components
+ *
+ */
 public class StartScreen{
 	//Instance Variables
     private Group root = new Group(); 
