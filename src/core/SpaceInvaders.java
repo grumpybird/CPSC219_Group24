@@ -26,7 +26,6 @@ import obj.Obstacles;
  * for the aliens.
  */
 
-
 public class SpaceInvaders{
 
     //Instance Variables

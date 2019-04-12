@@ -1,19 +1,12 @@
 package core;
 
-
-
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-
 import javafx.scene.text.Font;
-
 import javafx.scene.layout.Pane;
-import main.Main;
-import core.SpaceInvaders;
-
 
 public class StartScreen{
 	//Instance Variables
@@ -22,19 +15,13 @@ public class StartScreen{
     
     private static final double BOARD_WIDTH = 800;
     private static final double BOARD_HEIGHT = 800;
-    
-    //private Text title = new Text(" SPACE INVADERS ");
-    
+
     private static Scene startScene;
     private static GraphicsContext gc;
-    
-    
-    SpaceInvaders gamescreen = new SpaceInvaders();
 
     public Scene getBoardScene() {
-    	startScene = new Scene(root, BOARD_WIDTH, BOARD_HEIGHT);
-        
 
+    	startScene = new Scene(root, BOARD_WIDTH, BOARD_HEIGHT);
         Canvas canvas = new Canvas(BOARD_WIDTH, BOARD_HEIGHT);
         
         root.getChildren().add(canvas);
