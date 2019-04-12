@@ -7,9 +7,10 @@
  *	    Hayden Kerr
  *	    Theresa Lam
  *
- * @date: March 1, 2019.
- * @version: Textbased Bullets class for interactive demo.
+ * @date: April 11th, 2019.
+ * @version: Bullets class of Space Invaders Textbased Game for interactive demo.
  */
+
 public class BulletsT extends SpaceInvadersT{
 // Constructor
 public BulletsT () { //gets current state of game
