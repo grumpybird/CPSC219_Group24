@@ -1,3 +1,16 @@
+/**
+ * CPSC 219 Group 24 Project: Main Class
+ * 
+ * @author: Paula Almeida
+ *	    Gabriel Atienza
+ *	    Sharon Chan
+ *	    Hayden Kerr
+ *	    Theresa Lam
+ *
+ * @date: April 11th, 2019.
+ * @version: Main class of Space Invaders Game for interactive demo.
+ */
+
 package main;
 
 import core.ScreenController;
