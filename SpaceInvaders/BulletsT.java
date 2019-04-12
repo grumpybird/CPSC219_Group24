@@ -12,7 +12,7 @@
  */
 public class BulletsT extends SpaceInvadersT{
 // Constructor
-public BulletsT () {
+public BulletsT () { //gets current state of game
 super(getLocation(), getTargetQuads(), getPoints());
 }
 
@@ -38,7 +38,7 @@ public static void fire() {
 	 }
 	}
 	System.out.println ("                            points:" + getPoints());//displays points on-screen.
-  	for (int i = 0; i < myList.size(); i++) {
+  	for (int i = 0; i < myList.size(); i++) {//prints updated board and elements.
   		System.out.print(myList.get(i) + "          ");
   		if ((i + 1) % 7 == 0){
 		System.out.println("");
