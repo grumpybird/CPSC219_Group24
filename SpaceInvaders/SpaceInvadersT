@@ -50,14 +50,29 @@ public SpaceInvadersT( SpaceInvadersT toCopy) {
 	this.targetQuads = toCopy.getTargetQuads();
 	this.point = toCopy.getPoints();
 }
-//Accessor Methods	
+//Accessor Methods
+/**
+* retrives location of the avatar and returns it as an int, which can be indexed into the target quads list containing 
+* elements used to print the board.
+* @return: Gets location of the avatar and returns as an int
+**/
 public static int getLocation() {
 	return location; 
 }
+/**
+* Retrieves array of targetWuads which is a list of string elements used to create the board
+* Contains aliens, barriers and the avatar.
+* @return: targetQuads as a string array.
+*/
 public static String[] getTargetQuads() {
 	return targetQuads;
 }
-
+/**
+* This updates the points for every alien removed from the array. 
+* Takes the difference from the original amount of aliens and the current alien to find the number of aliens deleted.
+* For each alien deleted it adds 50 points.
+*
+**/
 public static int getPoints() {
 int countStars= 0;
 	
@@ -69,11 +84,6 @@ int countStars= 0;
 	return (point - countStars)*50;
 	
 }
-//Mutator Method
-public void setLocation(int i) {
-	location = location;
-}
-
 
 //Main Method
 /**
