@@ -8,7 +8,7 @@
  *	    Theresa Lam
  *
  * @date: April 11th, 2019.
- * @version: Movement class of Space Invaders Textbased Game for interactive demo.
+ * @version: Textbased Movement class of Space Invaders Textbased Game for interactive demo.
  */
 
 
