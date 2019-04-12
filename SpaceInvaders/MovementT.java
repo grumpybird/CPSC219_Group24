@@ -30,10 +30,11 @@ public MovementT () { //gets current state of the game, ie: location of everythi
 */
 public static void moveRight() {
 	if (getLocation() < 62) { //makes sure avatar cannot shift along any other row than the 9th, or off the board.
-		Collections.swap(myList, getLocation(), getLocation() + 1);
-		location = location + 1;
+		Collections.swap(myList, getLocation(), getLocation() + 1);//swaps element to the right of avatar with avatar.
+		location = location + 1;//updates avatar location to new one after swap
 		System.out.println ("                            points:" + getPoints());
-			for (int i = 0; i < myList.size(); i++) {
+		//prints updated board after swap	
+		for (int i = 0; i < myList.size(); i++) {
 				System.out.print(myList.get(i) + "          ");
 					if ((i + 1) % 7 == 0){
 						System.out.println("");
@@ -42,7 +43,7 @@ public static void moveRight() {
 	
 	}
 	else 
-		System.out.println("Sorry can't move farther right.");
+		System.out.println("Sorry can't move farther right.");//error message to user.
 	
 }
 /**
@@ -54,9 +55,10 @@ public static void moveRight() {
 */
 public static void moveLeft () {
 	if (getLocation() > 56) {//makes sure avatar cannot shift along any other row than the 9th, or off the board.
-		Collections.swap(myList, getLocation(), getLocation() - 1); 
-		location = location - 1;
+		Collections.swap(myList, getLocation(), getLocation() - 1); //swaps element to the left of avatar with avatar.
+		location = location - 1;//updates avatar location to new one after swap
 		System.out.println ("                            points:" + getPoints());
+		//prints updated board after swap
 		for (int i = 0; i < myList.size(); i++) {
 			System.out.print(myList.get(i) + "          ");
 			if ((i + 1) % 7 == 0){
@@ -66,7 +68,7 @@ public static void moveLeft () {
 	
 	}
 	else 
-		System.out.println("Sorry can't move farther left.");	
+		System.out.println("Sorry can't move farther left.");//error message to user.
 	
 }
 
