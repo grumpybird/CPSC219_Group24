@@ -8,7 +8,7 @@
  *	    Theresa Lam
  *
  * @date: April 11th, 2019.
- * @version: Main class of Space Invaders Game for interactive demo.
+ * @version: Main class of Space Invaders GUI Game for interactive demo.
  */
 
 package main;
