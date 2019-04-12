@@ -1,0 +1,5 @@
+In order to test the Points in SpaceInvaders, you have to download the file named SpaceInvaderJunitTest.java. 
+Once downloaded import the file into Eclipse along with the rest of the files in this github. 
+Once imported, make sure JUnit 4 library is imported and run the SpaceInvaders.java with the test. 
+This will then run the test automatically and let user know whether the tests have passed or failed. 
+For this demo3, only the testing of a negative score is implemented but for the final submission more tests will be implemented and more thorughly run. 
