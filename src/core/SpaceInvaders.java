@@ -38,6 +38,7 @@ public class SpaceInvaders{
    
     //exp
     private Bullet bulletc;
+    private EnemyBullet bulleta;
     private Image shipV = new Image("res/sprite.png");
     private ImageView ship = new ImageView(shipV);
  
@@ -126,6 +127,7 @@ public class SpaceInvaders{
             ship.setX(x);
         } else if (ke.getCode() == KeyCode.SPACE) { // shoot
             bulletc = new Bullet(10, 50, ship.getX(), aliensprite.enemies, pane);
+            bulleta = new EnemyBullet(10, 50, ship, aliensprite.enemies, pane);
         }
     }
 }
