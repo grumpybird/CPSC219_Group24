@@ -7,7 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.geometry.Rectangle2D;
-
+import main.Main;
 
 
 //implement Aliens in the main app under stage to implement variables, then call constructor
@@ -24,7 +24,7 @@ public class Aliens {
      private static int ENEMY_ROW = 5;
      private static int ENEMY_COLUMN = 7;
      private static int SPEED = 3;
-     public int score = 0;
+     public static int score = 0;
      
      private static double Sprite_BoardW = 800;
     
@@ -33,7 +33,7 @@ public class Aliens {
     
 
 
-     public ImageView[] enemies = new ImageView[ENEMY_COLUMN * ENEMY_ROW];
+     public static ImageView[] enemies = new ImageView[ENEMY_COLUMN * ENEMY_ROW];
      public int updateTime = 65;
 
     public Rectangle2D getBoundary(){
@@ -110,11 +110,14 @@ public class Aliens {
         if (score % 50 * 49 > 0 && score > 50 * 49) {
             newLevel = true;
         }
+        if (score == 1750){
+            Main.closeStage(Main.getStage());
+        }
      
      
     }
 
-    
-
-
+    public static int getScore() {
+        return score;
+    }
 }
