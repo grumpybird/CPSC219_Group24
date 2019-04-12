@@ -45,7 +45,8 @@ public class Aliens {
         return new Rectangle2D(1, 1, 1, 1);
     }
     /**
-    * This movement class controls the movements of the aliens in the main class.
+    * This movement class class sets the loxaiton (x, y) of each alien
+    * There are a total of 35 aliens  initially, set up in 5 rows of 7.
     */
     public void movement(Pane hbox) {
         for (int j = 0; j < ENEMY_ROW ; j++) {
