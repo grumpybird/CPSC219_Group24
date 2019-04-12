@@ -1,6 +1,6 @@
 /**
  * CPSC 219 Group 24 Project: Main Class
- * 
+ *
  * @author: Paula Almeida
  *	    Gabriel Atienza
  *	    Sharon Chan
@@ -22,23 +22,25 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import core.SpaceInvaders;
 import core.StartScreen;
+import obj.Aliens;
 
 public class Main extends Application {
-	
-	//Instance Variables
-    Stage stage;
+
+    // Instance variables
+    private static Stage stage;
     private Pane pane = new Pane();
-    
+
     StartScreen startscreen = new StartScreen();
-    
-    //Main Method
+
+    // Main method
     public static void main(String[] args) {
         launch(args);
     }
+
     /**
-     * @param primary stage of type stage
+     * @param primaryStage of type stage
      * Opens up application and displays start screen
-     * 
+     *
      */
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -56,13 +58,14 @@ public class Main extends Application {
         scene.setOnKeyPressed(e -> keyboardManage(e, screenController, primaryStage));
 
     }
+
     //Keyboard Manager
     /**
-     * 
+     *
      * @param ke of type KeyEvent
      * @param sc of type ScreenController
      * @param primaryStage of type Stage
-     * 
+     *
      * When the user presses enter, switches stages to start game.
      */
     public void keyboardManage(KeyEvent ke, ScreenController sc, Stage primaryStage) {
@@ -73,5 +76,13 @@ public class Main extends Application {
             primaryStage.setScene(scene);
             scene.setOnKeyPressed(e -> boardscreen.keyboardManager(e));
         }
+    }
+
+    public static void closeStage(Stage primaryStage){
+        primaryStage.close();
+    }
+
+    public static Stage getStage(){
+        return stage;
     }
 }
