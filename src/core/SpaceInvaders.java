@@ -1,31 +1,8 @@
 package core;
 
-/**
- * CPSC 219 Group 24 Project: Board Class
- *
- * @author: Paula Almeida
- *	    Gabriel Atienza
- *	    Sharon Chan
- *	    Hayden Kerr
- *	    Theresa Lam
- *
- * @date: March 1, 2019.
- *
- * @version: DEMO 2
- * For demo 2 our program is currently interactive with the user through the arrowkeys,
- * moving the avatar left and right from the input. When the main program runs, aliens, barriers and avatars are displayed on
- * the screen. Defaults for each objects are specified in their respective class.
- *
- * URL OF CODE USED AND MODIFIED TO DEVELOP THIS PART OF THE PROGRAM:
- * https://gist.github.com/xSputnicKx/fbf9a329818cff0a4a02f773b22ed9a7?fbclid=IwAR0ojil66TCbkFd4DlJT5zh35pDCxidxa_RFCssuYXWBCaEO2bDXCSfzGk8
- *
- */
-
 import javafx.animation.Animation;
-import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -33,20 +10,12 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.event.EventHandler;
 import javafx.util.Duration;
-import java.util.HashSet;
-
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import main.Main;
 import obj.Aliens;
 import obj.Bullet;
 import obj.Obstacles;
@@ -74,62 +43,34 @@ public class SpaceInvaders{
     private ImageView ship = new ImageView(shipV);
  
     private Text textscore = new Text("SCORE: " + aliensprite.score);
-    
-    //
-    
+
     //exp
     private boolean rightEnemy = true;
     private boolean bulletIsAlive = false;
     private boolean newLevel = true;
-    
-    //
-    
+
     private static final double BOARD_WIDTH = 800;
     private static final double BOARD_HEIGHT = 800;
 
-    //private static HashSet<String> currentlyActiveKeys;
     private static Scene boardScene;
-    //private static Avatar player;
     private static GraphicsContext gc;
     private static Obstacles barrier1;
     private static Obstacles barrier2;
     private static Obstacles barrier3;
-    //private Projectile fromAvatar;
-
-/**
- * It uses an image view to store the images into an arraylist of the aliens, sets the width of the blocks using the instance
- * variables ENEMY_EDGE. Also in a 7 by 5 arrangment. Sets the size of the image of each alien.
- */
-
-    /**
-     * Launches program and starts game
-     */
-   
-
-    /**
-     * This makes the stage and scenes for everything in the game. Displays all information relevant to user including the Lives,
-     * score, aliens, barriers and avatar. Also has an animation tiemr to time the movements of the aliens
-     */
    
     public Scene GameScreen() {
 
-
-
-
         boardScene = new Scene(root, BOARD_WIDTH, BOARD_HEIGHT);
-       
-
         Canvas canvas = new Canvas(BOARD_WIDTH, BOARD_HEIGHT);
-       
+
         root.getChildren().add(canvas);
         root.getChildren().add(pane2);
-       root.getChildren().add(pane);
+        root.getChildren().add(pane);
        
-       pane.setLayoutY(50);
+        pane.setLayoutY(50);
        
         gc = canvas.getGraphicsContext2D();
-        
-        
+
         //exp
         ship.setPreserveRatio(true);
         ship.setFitWidth(80);
@@ -143,10 +84,7 @@ public class SpaceInvaders{
         
         textscore.setX(500);
         textscore.setY(25);
-        //
         
-       // PrepareActionHandler();
-
         gc.setFill(Color.BLACK);
         gc.fillRect(0, 0, BOARD_WIDTH, BOARD_HEIGHT);
 
@@ -154,7 +92,6 @@ public class SpaceInvaders{
         Font theFont = Font.font("Comic Sans MS", 24);
         gc.setFont(theFont);
         gc.fillText("LIVES: ", 100, 25);
-        //gc.fillText("SCORE: ", 500, 25);
 
         aliensprite.movement(pane);
 
@@ -192,12 +129,4 @@ public class SpaceInvaders{
             bulletc = new Bullet(10, 50, ship.getX(), aliensprite.enemies, pane);
         }
     }
-//
 }
-
-/**
- * Sets the limits of the movement of the alien and the blank rectangle (spacing between aliens).
- * Also sets condition for the aliens to move downwards after hitting the sides.
- */
-
-
