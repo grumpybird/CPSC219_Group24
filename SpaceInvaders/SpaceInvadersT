@@ -103,45 +103,45 @@ int countStars= 0;
 */
 
 public static void main(String[] args) {
-	System.out.println("                          Space Invaders     ");
-	System.out.println ("                            points:" + point);
+	System.out.println("                          Space Invaders     "); //print title at the top of the screen at the start of the game
+	System.out.println ("                            points:" + point); //print the number of points
 	
-	for (int i = 0; i < targetQuads.length; i++) {
-		myList.add(targetQuads[i]);
+	for (int i = 0; i < targetQuads.length; i++) { 
+		myList.add(targetQuads[i]); // adds the string array targetQuads to myList
 	}
 	for (int i1 = 0; i1 < myList.size(); i1++) {
-		System.out.print(myList.get(i1) + "          ");
+		System.out.print(myList.get(i1) + "          "); // formats myList containing targetQuad stings into 9 rows of 7.
 		if ((i1 + 1) % 7 == 0){
 			System.out.println("");
 		}
 	}
 	Scanner input = new Scanner(System.in);
    
-	while( sc.equals("x") == false && myList.contains("*") == true) {
-		System.out.println("Move character (left 'a' or right 'd'), 'f' to fire and 'x' to quit game.");
+	while( sc.equals("x") == false && myList.contains("*") == true) { // While the user does not input x and aliens still exist in the board
+		System.out.println("Move character (left 'a' or right 'd'), 'f' to fire and 'x' to quit game."); // ask for user input
         sc = input.next();	
-        if (sc.equals("a")) {
-        	Movement b = new Movement();
+        if (sc.equals("a")) { // if input =  "a" it takes an instance of the class MovementT and calls method moveleft
+        	MovementT b = new MovementT();
    		 	b.moveLeft();
         	}	
         	
-        if (sc.equals("d")) {
-        		Movement b = new Movement();
+        if (sc.equals("d")) { // if input =  "d" it takes an instance of the class MovementT and calls method moveRight
+        		MovementT b = new MovementT();
        		 	b.moveRight();
         	}
         	
         	}
-        if (sc.equals("f")) {
-        	 Bullets a = new Bullets();
+        if (sc.equals("f")) { //if input = "f" it takes an instance of the class BulletsT and calls method fire
+        	 BulletsT a = new BulletsT();
         		 a.fire();
             }
         	
-        else if (sc.equals("x")) {
+        else if (sc.equals("x")) { // if user input is "x" end game
               System.out.println("Game over");
             }
             
         	else  {
-    	        System.out.println("Invalid input, try again");
+    	        System.out.println("Invalid input, try again"); // if input is invalid, prompts user to input valid input
     	        
     	     }
         
