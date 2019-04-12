@@ -14,11 +14,19 @@
 import java.util.Collections;
 
 public class MovementT extends SpaceInvadersT{
-	
+
+//Constructor	
 public MovementT () {
 	super(getLocation(), getTargetQuads(), getPoints());
 	}
-
+//Mutator Method
+/**
+* When the user uses the comand to move right, this method shifts the avatar one column over to the right.
+* Does this by checking the current location and 1 to the right.
+* This is done by swapping the element to the immediate right of the avatar in the list.
+* Limits are set, so that the avatar only moves within the 9th row.
+* if they reach the limit, an output message tells the user they can't go any farther, and repromts for valid input.
+*/
 public static void moveRight() {
 	if (getLocation() < 62) {
 		Collections.swap(myList, getLocation(), getLocation() + 1);
@@ -36,6 +44,13 @@ public static void moveRight() {
 		System.out.println("Sorry can't move farther right.");
 	
 }
+/**
+* When the user uses the comand to move left, this method shifts the avatar one column over to the left.
+* Does this by checking the current location and 1 to the left.
+* This is done by swapping the element to the immediate left of the avatar in the list.
+* Limits are set, so that the avatar only moves within the 9th row.
+* if they reach the limit, an output message tells the user they can't go any farther, and repromts for valid input.
+*/
 public static void moveLeft () {
 	if (getLocation() > 56) {
 		Collections.swap(myList, getLocation(), getLocation() - 1);
