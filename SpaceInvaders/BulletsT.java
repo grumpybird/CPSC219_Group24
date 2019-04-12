@@ -28,11 +28,11 @@ super(getLocation(), getTargetQuads(), getPoints());
 */
 
 public static void fire() {
-	int count = 1; //count variable initiated to help check for collisions.
+	int count = 1; //count variable initiated to move bullet up column and help check for collisions.
 	//checks for collisions by checking each row along the tragectory of the bullet for any obstacle. 
 	for (count = 1; count<=8 ;count++) {
-	 if (getTargetQuads()[(getLocation() - 7*(count))].equals (" ") == false){
-		 getTargetQuads()[(getLocation() - 7*count)] = " ";
+	 if (getTargetQuads()[(getLocation() - 7*(count))].equals (" ") == false){//obstacle in tragectory
+		 getTargetQuads()[(getLocation() - 7*count)] = " ";//replace "*" with " ", ie alien destroyed.
   		myList.set((getLocation() - 7*(count)), " ");
   		break;	
 	 }
