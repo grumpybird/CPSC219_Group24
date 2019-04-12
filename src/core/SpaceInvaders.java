@@ -1,3 +1,16 @@
+/**
+ * CPSC 219 Group 24 Project: SpaceInvaders Class
+ * 
+ * @author: Paula Almeida
+ *	    Gabriel Atienza
+ *	    Sharon Chan
+ *	    Hayden Kerr
+ *	    Theresa Lam
+ *
+ * @date: April 11th, 2019.
+ * @version: Space Invaders class of Space Invaders GUI Game for interactive demo.
+ */
+
 package core;
 
 import javafx.animation.Animation;
