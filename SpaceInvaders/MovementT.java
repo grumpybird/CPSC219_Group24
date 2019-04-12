@@ -7,8 +7,8 @@
  *	    Hayden Kerr
  *	    Theresa Lam
  *
- * @date: March 1, 2019.
- * @version: Textbased Space Invaders class for interactive demo.
+ * @date: April 11th, 2019.
+ * @version: Movement class of Space Invaders Textbased Game for interactive demo.
  */
 
 
