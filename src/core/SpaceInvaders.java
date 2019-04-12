@@ -1,16 +1,3 @@
-/**
- * CPSC 219 Group 24 Project: SpaceInvaders Class
- * 
- * @author: Paula Almeida
- *	    Gabriel Atienza
- *	    Sharon Chan
- *	    Hayden Kerr
- *	    Theresa Lam
- *
- * @date: April 11th, 2019.
- * @version: Space Invaders class of Space Invaders GUI Game for interactive demo.
- */
-
 package core;
 
 import javafx.animation.Animation;
@@ -22,13 +9,13 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.util.Duration;
-import javafx.scene.layout.Pane;
 import obj.Aliens;
 import obj.Bullet;
 import obj.Obstacles;
@@ -45,67 +32,79 @@ public class SpaceInvaders{
     private Group root = new Group();
     private Pane pane = new Pane();
     private Pane pane2 = new Pane();
+
     private Aliens aliensprite = new Aliens();
+    
+   
+    //exp
     private Bullet bulletc;
     private Image shipV = new Image("res/sprite.png");
     private ImageView ship = new ImageView(shipV);
+ 
     private Text textscore = new Text("SCORE: " + aliensprite.score);
+
+    //exp
     private boolean rightEnemy = true;
     private boolean bulletIsAlive = false;
+    private boolean newLevel = true;
+
     private static final double BOARD_WIDTH = 800;
     private static final double BOARD_HEIGHT = 800;
+
     private static Scene boardScene;
     private static GraphicsContext gc;
     private static Obstacles barrier1;
     private static Obstacles barrier2;
     private static Obstacles barrier3;
+   
     public Scene GameScreen() {
 
         boardScene = new Scene(root, BOARD_WIDTH, BOARD_HEIGHT);
         Canvas canvas = new Canvas(BOARD_WIDTH, BOARD_HEIGHT);
-        
-        root.getChildren().add(canvas); //adds canvas to scene
-        root.getChildren().add(pane2); //adds pane2 to scene
-        root.getChildren().add(pane); //adds pane to scene
-        pane.setLayoutY(50); // spaces the starting of the aliens
+
+        root.getChildren().add(canvas);
+        root.getChildren().add(pane2);
+        root.getChildren().add(pane);
        
-        gc = canvas.getGraphicsContext2D(); //graphic context variable
+        pane.setLayoutY(50);
+       
+        gc = canvas.getGraphicsContext2D();
 
-        
-        ship.setPreserveRatio(true); // prevents source image of ship from changing
-        ship.setFitWidth(80); // setting how big the image is
-        ship.setX(100); // set x coordinate of ship to 100
-        ship.setY(680); // set y coordinate of ship to 680
-        pane.getChildren().add(ship); // adds ship to pane
-        pane2.getChildren().add(textscore); // adds text score to pane2
+        //exp
+        ship.setPreserveRatio(true);
+        ship.setFitWidth(80);
+        ship.setX(100);
+        ship.setY(680);
+        pane.getChildren().add(ship);
+        pane2.getChildren().add(textscore);
           
-        textscore.setFont(Font.font("Comic Sans MS", 24)); // Sets font style and size
-        textscore.setFill(Color.LIMEGREEN); //sets color to lime green
+        textscore.setFont(Font.font("Comic Sans MS", 24));
+        textscore.setFill(Color.LIMEGREEN);
         
-        textscore.setX(500); // sets x coordinate of textscore
-        textscore.setY(25); //set y coordinate of textscore
+        textscore.setX(500);
+        textscore.setY(25);
         
-        gc.setFill(Color.BLACK); // background set to black
-        gc.fillRect(0, 0, BOARD_WIDTH, BOARD_HEIGHT); //setting background height and width starting at (0,0)
+        gc.setFill(Color.BLACK);
+        gc.fillRect(0, 0, BOARD_WIDTH, BOARD_HEIGHT);
 
-        gc.setFill(Color.LIMEGREEN); //sets color to lime green
-        Font theFont = Font.font("Comic Sans MS", 24); // Sets font style and size
-        gc.setFont(theFont); 
-        gc.fillText("LIVES: ", 100, 25); //text added
+        gc.setFill(Color.LIMEGREEN);
+        Font theFont = Font.font("Comic Sans MS", 24);
+        gc.setFont(theFont);
+        gc.fillText("LIVES: ", 100, 25);
 
-        aliensprite.movement(pane); //Calling the movement method in the aliens class
-        // animation of alien movement
-        Duration dI = new Duration(aliensprite.updateTime); 
+        aliensprite.movement(pane);
+
+        Duration dI = new Duration(aliensprite.updateTime);
         KeyFrame f = new KeyFrame(dI, e -> aliensprite.movementCore(bulletc, textscore, newLevel, pane));
         Timeline tl = new Timeline(f);
         tl.setCycleCount(Animation.INDEFINITE);
         tl.play();
         boardScene.setOnKeyPressed(e -> keyboardManager(e));
-        //Creation of Barriers
+        
         barrier1 = new Obstacles(1);
         barrier2 = new Obstacles(2);
         barrier3 = new Obstacles(3);
-        //adds barriers on the board
+
         barrier1.drawBarrier(gc);
         barrier2.drawBarrier(gc);
         barrier3.drawBarrier(gc);
@@ -115,13 +114,13 @@ public class SpaceInvaders{
         return boardScene;
     }
     
-    // Managing user input
+    //exp
     public void keyboardManager(KeyEvent ke) {
-        if (ke.getCode() == KeyCode.D) { // moves ship right
+        if (ke.getCode() == KeyCode.D) {
             double x = ship.getX();
             x += 10;
             ship.setX(x);
-        } else if (ke.getCode() == KeyCode.A) { // moves ship left
+        } else if (ke.getCode() == KeyCode.A) {
             double x = ship.getX();
             x -= 10;
             ship.setX(x);
