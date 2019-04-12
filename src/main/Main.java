@@ -24,16 +24,22 @@ import core.SpaceInvaders;
 import core.StartScreen;
 
 public class Main extends Application {
-
+	
+	//Instance Variables
     Stage stage;
     private Pane pane = new Pane();
-
+    
     StartScreen startscreen = new StartScreen();
-
+    
+    //Main Method
     public static void main(String[] args) {
         launch(args);
     }
-
+    /**
+     * @param primary stage of type stage
+     * Opens up application and displays start screen
+     * 
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
 
@@ -50,7 +56,15 @@ public class Main extends Application {
         scene.setOnKeyPressed(e -> keyboardManage(e, screenController, primaryStage));
 
     }
-
+    //Keyboard Manager
+    /**
+     * 
+     * @param ke of type KeyEvent
+     * @param sc of type ScreenController
+     * @param primaryStage of type Stage
+     * 
+     * When the user presses enter, switches stages to start game.
+     */
     public void keyboardManage(KeyEvent ke, ScreenController sc, Stage primaryStage) {
         if (ke.getCode() == KeyCode.ENTER) {
             SpaceInvaders boardscreen = new SpaceInvaders();
