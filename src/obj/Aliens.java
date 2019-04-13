@@ -11,7 +11,7 @@
  * @version: Alien class of Space Invaders GUI Game for interactive demo.
  */
 
-package obj;
+package src.obj;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
