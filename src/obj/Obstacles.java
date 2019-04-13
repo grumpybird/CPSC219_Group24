@@ -1,4 +1,4 @@
-package src.obj;
+package CPSC219_Group24.src.obj;
 
 /**
  * CPSC 219 Group 24 Project: Obstacles Class
@@ -45,7 +45,7 @@ public class Obstacles {
     private int barrierX;
     private int barrier;
 
-    private static final Image BARRIER_IMAGE = new Image("res/Barrier.png");
+    private static final Image BARRIER_IMAGE = new Image("CPSC219_Group24/src/res/Barrier.png");
     private static final int BARRIER_WIDTH = 100;
     private static final int BARRIER_HEIGHT = 65;
     private static final int BARRIER_Y = 635;
@@ -100,13 +100,12 @@ public class Obstacles {
  * Retrieves the barrier's health from the obstacles
  * @return the value of the barrier's health
  */
-    public int getBarrierHealth(){ //unused method because we could not implement the barrier collisions to work.
+    public int getBarrierHealth(){
         return barrierHealth;
     }
 
-    public void barrierHit(){ // Method doesn't work, but was meant to check if a collision
-        barrierHealth -= 1; //happened the health would decrease
-  
+    public void barrierHit(){
+        barrierHealth -= 1;
   
     }
 }
