@@ -31,6 +31,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -47,6 +48,7 @@ public class EnemyBullet {
     private Pane p;
     private int incr;
     private static Rectangle rect = Aliens.pointer;
+    public static int life = 3;
 
     /**
     * Takes x,y, pos, v[] and p as arguments
@@ -54,7 +56,7 @@ public class EnemyBullet {
     * @param pos is the position of the avatar
     * @param p allows to print the rectangle on the pane based on the position of x and y of the avatar
     */
-    public EnemyBullet(double x, double y, ImageView ship, ImageView v[], Pane p) {
+    public EnemyBullet(double x, double y, ImageView ship, ImageView v[], Pane p, Text text, Obstacles barrier1, Obstacles barrier2, Obstacles barrier3) {
     	
         if (r2 == null) {
             this.p = p;
@@ -73,13 +75,13 @@ public class EnemyBullet {
           //  for (int j = 0; j < v.length; j++) {
                     if (v[i] != null) {
                         r2.setY(v[i].getY());
-                        collisioncheck(ship);
                     }
          //   }
             Duration dB = new Duration(5);
             KeyFrame fB = new KeyFrame(dB, e -> {
                 if (r2 != null) {
-                    r2.setY(r2.getY() + 5);
+                    r2.setY(r2.getY() + 1);
+                    collisioncheck(ship, text, barrier1);
                 }
             });
             tlB = new Timeline(fB);
@@ -88,16 +90,18 @@ public class EnemyBullet {
         }
     }
 
-    private boolean collisioncheck(ImageView ship) {
+    private boolean collisioncheck(ImageView ship, Text text, Obstacles barrier1) {
         
             if (r2 != null && ship != null) {
-                if (( r2.getY() > ship.getY()
-                     //   && r.getHeight() + r.getY() < ship.getY()
+                if (( r2.getY() > ship.getY() + ship.getFitHeight() 
+                                && r2.getX() < ship.getX() + ship.getFitWidth()
+                     && r2.getX() + r2.getWidth() < ship.getX()
+                     && r2.getHeight() + r2.getY() > ship.getY()
                         )) {
-                    ship.setVisible(false);
-                    ship = null;
                     removeBullet();
                     bulletIsAlive = false;
+                    life -= 1;
+                    text.setText("LIFE: " + life);
                     
                 }
             }
@@ -106,8 +110,20 @@ public class EnemyBullet {
                 if (r2.getY()<0-r2.getHeight()-1) {
                     removeBullet();
             }
+        if (life <= 0) {
+            ship.setVisible(false);
+            ship = null;
+            life = 0;
+            text.setText("LIFE: " + life);
+        }
         }
         return bulletIsAlive;
+    }
+    
+    private void player (ImageView ship){
+        if (ship == null) {
+            ship.setVisible(true);
+        }
     }
     /**
     * takes enemies[] as an argument to check for collision of the enemies respective to the obstacles and avatar
@@ -118,5 +134,9 @@ public class EnemyBullet {
     public void removeBullet() {
         p.getChildren().remove(r2);
         r2 = null;
+    }
+    
+    public int getplayerlife(){
+        return life ;
     }
 }
