@@ -79,15 +79,15 @@ public class Bullet {
     * @param enemies[]
     */
     private boolean collisioncheck(ImageView enemies[]) {
-        for (int i = 0; i < enemies.length; i++) {
-            if (r != null && enemies[i] != null) {
+        for (int i = 0; i < enemies.length; i++) { 
+            if (r != null && enemies[i] != null) { // if the bullet and alien are alive
                 if ((r != null && r.getX() < enemies[i].getX() + enemies[i].getFitWidth()
                         && r.getX() + r.getWidth() > enemies[i].getX()
-                        && r.getY() < enemies[i].getY() + enemies[i].getFitHeight()
-                        && r.getHeight() + r.getY() > enemies[i].getY())) {
-                    enemies[i].setVisible(false);
-                    enemies[i] = null;
-                    removeBullet();
+                        && r.getY() < enemies[i].getY() + enemies[i].getFitHeight() // setting condition for collision between 
+                        && r.getHeight() + r.getY() > enemies[i].getY())) { // the bullet and the enemy
+                    enemies[i].setVisible(false); //if it is delete alien
+                    enemies[i] = null; //set to null
+                    removeBullet(); //call method to remove bullet
                     bulletIsAlive = false;
                     incr += 50; // updating the score when a alien is removed
                 }
