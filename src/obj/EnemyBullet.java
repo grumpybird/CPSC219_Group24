@@ -1,4 +1,4 @@
-package src.obj;
+package CPSC219_Group24.src.obj;
 
 /** 
 * CPSC 219 Group 24 Project: Bullet Class
