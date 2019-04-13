@@ -11,7 +11,7 @@
  * @version: StartScreen class of Space Invaders GUI Game for interactive demo.
  */
 
-package core;
+package src.core;
 
 import javafx.scene.Group;
 import javafx.scene.Scene;
