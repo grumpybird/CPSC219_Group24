@@ -10,7 +10,7 @@
 * @date: April 11th, 2019.
 * @version: Space Invaders class of Space Invaders GUI Game for interactive demo.
 */
-package src.core;
+package CPSC219_Group24.src.core;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -28,10 +28,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
-import obj.Aliens;
-import obj.Bullet;
-import obj.EnemyBullet;
-import obj.Obstacles;
+import CPSC219_Group24.src.obj.Aliens;
+import CPSC219_Group24.src.obj.Bullet;
+import CPSC219_Group24.src.obj.EnemyBullet;
+import CPSC219_Group24.src.obj.Obstacles;
 
 /**
  * Space invaders is our main class, which handles most of the functions. It starts the game and handles input from user
@@ -48,7 +48,7 @@ public class SpaceInvaders{
     private Aliens aliensprite = new Aliens();
     private Bullet bulletc;
     private EnemyBullet bulleta;
-    private Image shipV = new Image("res/sprite.png");
+    private Image shipV = new Image("CPSC219_Group24/src/res/sprite.png");
     private ImageView ship = new ImageView(shipV);
     private Text textscore = new Text("SCORE: " + aliensprite.score);
     private Text lifepoint = new Text("LIFE: " + EnemyBullet.life);
