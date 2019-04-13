@@ -11,7 +11,7 @@
  * @version: Alien class of Space Invaders GUI Game for interactive demo.
  */
 
-package src.obj;
+package CPSC219_Group24.src.obj;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -20,7 +20,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.geometry.Rectangle2D;
-import main.Main;
+import CPSC219_Group24.src.main.Main;
 
 
 /**
@@ -28,7 +28,7 @@ import main.Main;
 */
 public class Aliens {
     //instance variables
-    private static Image enemiesV = new Image("res/alien1-2.gif");
+    private static Image enemiesV = new Image("CPSC219_Group24/src/res/alien1-2.gif");
     private static boolean rightEnemy = true;
     public int MOV = 0;
      private static int ENEMY_EDGE = 40;
@@ -113,15 +113,7 @@ public class Aliens {
             score += bulletc.getScore();
             punt.setText("Score: " + score);
         }
-        if (score % 50 * 49 == 0 && score >= 50 * 49) {
-            if (newLevel) {
-                movement(pane);
-                newLevel = false;
-            }
-        }
-        if (score % 50 * 49 > 0 && score > 50 * 49) {
-            newLevel = true;
-        }
+        
         if (score == 1700 || ship == null){
             Main.closeStage(Main.getStage());
         }
