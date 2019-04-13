@@ -10,7 +10,7 @@
 * @date: April 11th, 2019.
 * @version: Space Invaders class of Space Invaders GUI Game for interactive demo.
 */
-package core;
+package src.core;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
