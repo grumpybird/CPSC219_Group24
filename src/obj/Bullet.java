@@ -47,6 +47,7 @@ public class Bullet {
     private static Rectangle rect = Aliens.pointer;
 
     /**
+    * Sets up the bullet in the stage from where the avatar is located
     * Takes x,y, pos, v[] and p as arguments
     * @param x and y tells the constructure the location of where the starting position of the avatar will be
     * @param pos is the position of the avatar
