@@ -100,12 +100,13 @@ public class Obstacles {
  * Retrieves the barrier's health from the obstacles
  * @return the value of the barrier's health
  */
-    public int getBarrierHealth(){
+    public int getBarrierHealth(){ //unused method because we could not implement the barrier collisions to work.
         return barrierHealth;
     }
 
-    public void barrierHit(){
-        barrierHealth -= 1;
+    public void barrierHit(){ // Method doesn't work, but was meant to check if a collision
+        barrierHealth -= 1; //happened the health would decrease
+  
   
     }
 }
