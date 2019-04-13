@@ -11,7 +11,7 @@
  * @version: ScreenController class of Space Invaders GUI Game for interactive demo.
  */
 
-package src.core;
+package CPSC219_Group24.src.core;
 
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
