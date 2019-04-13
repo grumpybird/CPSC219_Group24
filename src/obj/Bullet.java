@@ -56,6 +56,7 @@ public class Bullet {
             this.p = p;
             Timeline tlB;
             r = new Rectangle(x, y);
+            r.setFill(Color.WHITE);
             p.getChildren().add(r);
             r.setX(pos + 35);
             r.setY(640);
