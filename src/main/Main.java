@@ -11,18 +11,18 @@
  * @version: Main class of Space Invaders GUI Game for interactive demo.
  */
 
-package src.main;
+package CPSC219_Group24.src.main;
 
-import core.ScreenController;
+import CPSC219_Group24.src.core.ScreenController;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import core.SpaceInvaders;
-import core.StartScreen;
-import obj.EnemyBullet;
+import CPSC219_Group24.src.core.SpaceInvaders;
+import CPSC219_Group24.src.core.StartScreen;
+import CPSC219_Group24.src.obj.EnemyBullet;
 
 public class Main extends Application {
 
