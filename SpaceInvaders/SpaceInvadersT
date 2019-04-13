@@ -126,13 +126,12 @@ public static void main(String[] args) {
    		 	b.moveLeft();
         	}	
         	
-        if (sc.equals("d")) { // if input =  "d" it takes an instance of the class MovementT and calls method moveRight
+        else if (sc.equals("d")) { // if input =  "d" it takes an instance of the class MovementT and calls method moveRight
         		MovementT b = new MovementT();
        		 	b.moveRight();
         	}
         	
-        	}
-        if (sc.equals("f")) { //if input = "f" it takes an instance of the class BulletsT and calls method fire
+        else if (sc.equals("f")) { //if input = "f" it takes an instance of the class BulletsT and calls method fire
         	 BulletsT a = new BulletsT();
         		 a.fire();
             }
@@ -141,12 +140,12 @@ public static void main(String[] args) {
               System.out.println("Game over");
             }
             
-        	else  {
-    	        System.out.println("Invalid input, try again"); // if input is invalid, prompts user to input valid input
+        else  {
+    	      System.out.println("Invalid input, try again"); // if input is invalid, prompts user to input valid input
     	        
     	     }
         
 	}
-	
+}
 }
 
