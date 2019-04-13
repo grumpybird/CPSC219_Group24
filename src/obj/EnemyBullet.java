@@ -111,21 +111,25 @@ private boolean collisioncheck(ImageView ship, Text text, Obstacles barrier1) {
                     
                 }
             }
-        
-        if (r2 != null) {
-                if (r2.getY()<0-r2.getHeight()-1) {
-                    removeBullet();
+       
+            if (r2 != null) { 
+                if (r2.getY()<0-r2.getHeight()-1) { //if the bullet reaches the bottom of screen
+                    removeBullet(); //calls method remove bullet
             }
-        if (life <= 0) {
-            ship.setVisible(false);
+        if (life <= 0) { //Once the ship reaches 0
+            ship.setVisible(false); // delete ship
             ship = null;
-            life = 0;
-            text.setText("LIFE: " + life);
+            life = 0; 
+            text.setText("LIFE: " + life); //update lives
         }
         }
         return bulletIsAlive;
     }
     
+/**
+* Checks if the player is going alive
+* @param ship of type ImageView
+*/
     private void player (ImageView ship){
         if (ship == null) {
             ship.setVisible(true);
@@ -141,7 +145,9 @@ private boolean collisioncheck(ImageView ship, Text text, Obstacles barrier1) {
         p.getChildren().remove(r2);
         r2 = null;
     }
-    
+/*
+* Getter method for the player's life
+*/
     public int getplayerlife(){
         return life ;
     }
