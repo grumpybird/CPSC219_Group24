@@ -89,7 +89,7 @@ public class Bullet {
                     enemies[i] = null;
                     removeBullet();
                     bulletIsAlive = false;
-                    incr += 50;
+                    incr += 50; // updating the score when a alien is removed
                 }
             }
         }
@@ -100,16 +100,26 @@ public class Bullet {
         }
         return bulletIsAlive;
     }
-
+/**
+ * the score is set to 0, For ever alien that is killed, the score will go up and updates the
+ * parameter x
+ * @return x of type integer
+ */
     public int getScore() {
         int x = incr;
         incr = 0;
         return x;
     }
-    
+  /**
+   * Retrieves location of the bullet as a rectangle with x and y parameters
+   * @param rect
+   */
     public void getRectangle(Rectangle rect){
-        this.rect = rect;
+        this.rect = rect; 
     }
+  /**
+   * After the bullet is shot it removes the bullet and sets it as null
+   */
     
     public void removeBullet() {
         p.getChildren().remove(r);
