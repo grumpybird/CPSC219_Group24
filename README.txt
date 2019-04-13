@@ -118,3 +118,6 @@ https://github.com/leonardo-ono/Java2DSpaceInvaders
 
 (21) Space-Invaders-Tutorial-Youtube by Andrew Murray. Date accessed: April 11, 2019.
 https://github.com/Dregron/Space-Invaders-Tutorial-YouTube/tree/master/src/com/dregronprogram
+
+TESTING:
+Attempted junit test does not compile, can be found in folder TObs. Import statements cause compile errors.
