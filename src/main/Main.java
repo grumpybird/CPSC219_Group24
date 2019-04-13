@@ -11,7 +11,7 @@
  * @version: Main class of Space Invaders GUI Game for interactive demo.
  */
 
-package main;
+package src.main;
 
 import core.ScreenController;
 import javafx.application.Application;
