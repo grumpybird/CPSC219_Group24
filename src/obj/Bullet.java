@@ -1,4 +1,4 @@
-package src.obj;
+package CPSC219_Group24.src.obj;
 
 /** 
 * CPSC 219 Group 24 Project: Bullet Class
@@ -29,6 +29,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
