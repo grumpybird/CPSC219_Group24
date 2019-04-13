@@ -74,7 +74,7 @@ public class Aliens {
     * checking for collsions with the edge of the screen.
     * WHen there is a collsion with the edge, the enemy will movedown.
     */ 
-    public void movementCore(Bullet bulletc, Text punt, boolean newLevel, Pane pane) {
+    public void movementCore(Bullet bulletc, Text punt, Pane pane, ImageView ship) {
         if (rightEnemy) { //check if the enemy is going toward right
             if (pointer.getX() + ENEMY_EDGE >= Sprite_BoardW) { //check collision on right edge
                 rightEnemy = false;
@@ -122,7 +122,7 @@ public class Aliens {
         if (score % 50 * 49 > 0 && score > 50 * 49) {
             newLevel = true;
         }
-        if (score == 1750){
+        if (score == 1700 || ship == null){
             Main.closeStage(Main.getStage());
         }
      
