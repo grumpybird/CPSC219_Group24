@@ -1,4 +1,4 @@
-package obj;
+package src.obj;
 
 /**
  * CPSC 219 Group 24 Project: Obstacles Class
