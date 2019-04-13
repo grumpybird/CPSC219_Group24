@@ -30,6 +30,7 @@ import javafx.scene.text.Text;
 import javafx.util.Duration;
 import obj.Aliens;
 import obj.Bullet;
+import obj.EnemyBullet;
 import obj.Obstacles;
 
 /**
@@ -50,9 +51,10 @@ public class SpaceInvaders{
     private Image shipV = new Image("res/sprite.png");
     private ImageView ship = new ImageView(shipV);
     private Text textscore = new Text("SCORE: " + aliensprite.score);
+    private Text lifepoint = new Text("LIFE: " + EnemyBullet.life);
     private boolean rightEnemy = true;
     private boolean bulletIsAlive = false;
-    private boolean newLevel = true;
+    public static int life = 3;
     private static final double BOARD_WIDTH = 800;
     private static final double BOARD_HEIGHT = 800;
     private static Scene boardScene;
@@ -77,6 +79,7 @@ public class SpaceInvaders{
 	    ship.setY(680); // set y coordinate of ship to 680
 	    pane.getChildren().add(ship); // adds ship to pane
 	    pane2.getChildren().add(textscore); // adds text score to pane2
+	    pane2.getChildren().add(lifepoint);
           
         textscore.setFont(Font.font("Comic Sans MS", 24)); // Sets font style and size
         textscore.setFill(Color.LIMEGREEN); //sets color to lime green
@@ -87,19 +90,37 @@ public class SpaceInvaders{
         gc.setFill(Color.BLACK); // background set to black
 	    gc.fillRect(0, 0, BOARD_WIDTH, BOARD_HEIGHT); //setting background height and width starting at (0,0)
 
+	    lifepoint.setFont(Font.font("Comic Sans MS", 24));
+	    lifepoint.setFill(Color.LIMEGREEN);
+	    lifepoint.setX(100);
+	    lifepoint.setY(25);
+	    gc.setFill(Color.BLACK);
+	    gc.fillRect(0, 0, BOARD_WIDTH, BOARD_HEIGHT);
+	    
         gc.setFill(Color.LIMEGREEN); //sets color to lime green
 	    Font theFont = Font.font("Comic Sans MS", 24); // Sets font style and size
 	    gc.setFont(theFont); 
-	    gc.fillText("LIVES: ", 100, 25); //text added
 
         aliensprite.movement(pane); // Calling the movement method in the alien class
         // animation of alien movement
         Duration dI = new Duration(aliensprite.updateTime);
-        KeyFrame f = new KeyFrame(dI, e -> aliensprite.movementCore(bulletc, textscore, newLevel, pane));
+        KeyFrame f = new KeyFrame(dI, e -> aliensprite.movementCore(bulletc, textscore, pane, ship));
         Timeline tl = new Timeline(f);
         tl.setCycleCount(Animation.INDEFINITE);
         tl.play();
         boardScene.setOnKeyPressed(e -> keyboardManager(e));
+	
+	Duration d2 = new Duration(650);
+	KeyFrame f2 = new KeyFrame(d2, e ->  bulleta = new EnemyBullet(10, 10, ship, Aliens.enemies, pane, lifepoint, barrier1, barrier2, barrier3));
+	Timeline tl2 = new Timeline(f2);
+	tl2.setCycleCount(Animation.INDEFINITE);
+	tl2.play();
+	    
+	if (ship == null) {
+		tl2.stop();
+	}
+	   
+	
         // Creation of barriers
         barrier1 = new Obstacles(1);
         barrier2 = new Obstacles(2);
@@ -126,7 +147,6 @@ public class SpaceInvaders{
             ship.setX(x);
         } else if (ke.getCode() == KeyCode.SPACE) { // shoot
             bulletc = new Bullet(10, 50, ship.getX(), aliensprite.enemies, pane);
-            bulleta = new EnemyBullet(10, 50, ship, aliensprite.enemies, pane);
         }
     }
 }
