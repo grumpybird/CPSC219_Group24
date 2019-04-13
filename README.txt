@@ -105,7 +105,9 @@ Inheritance is used to delegat the actions to respective classes, and are moved 
 The GITHUB LINK: https://github.com/grumpybird/CPSC219_Group24/tree/master/SpaceInvaders
 
 To locate the interactive demo, you will have to go to our github respitory and download all the files from the src folder into a zip file and compile it through command javac.
-After compilation, run the program with java SpaceInvaders in console. Or in Eclipse by importing all the class files and running it through the IDE. 
+After compilation, run the program with java SpaceInvaders in console. 
+Making sure your are running it with the right folder CPSC219_Group24.
+Or in Eclipse by importing all the class files and running it through the IDE. 
 To locate the text based version, you will find it under the Space Invaders file located in the github respitory which can be downloaded and ran against the console.
 Through compilation with the command javac and then running the program with java SpaceInvaders. Or in Eclipse by importing all the class flies and running it. 
 
@@ -120,4 +122,9 @@ https://github.com/leonardo-ono/Java2DSpaceInvaders
 https://github.com/Dregron/Space-Invaders-Tutorial-YouTube/tree/master/src/com/dregronprogram
 
 TESTING:
-Attempted junit test does not compile, can be found in folder TObs. Import statements cause compile errors.
+In order to test the test file for Obstacles in the folder TObs, you will have to download the file named ObstaclesTest.java
+Once downloaded import the file into Eclipse along with the rest of the files in the github.
+Once imported, make sure Junit 4 library is imported and run the Obstacles.java with the test.
+This will then run the test automatically and let user know whether the tests have veen passed or failed.
+However, the test file does not compile due to import statements.
+
