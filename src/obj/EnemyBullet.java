@@ -89,19 +89,25 @@ public class EnemyBullet {
             tlB.play();
         }
     }
+/**
+ *  
+ * @param ship of type Imageview
+ * @param text of type text
+ * @param barriers 1 of type Obstacles
+ */
 
-    private boolean collisioncheck(ImageView ship, Text text, Obstacles barrier1) {
+private boolean collisioncheck(ImageView ship, Text text, Obstacles barrier1) {
         
-            if (r2 != null && ship != null) {
-                if (( r2.getY() > ship.getY() + ship.getFitHeight() 
-                                && r2.getX() < ship.getX() + ship.getFitWidth()
+            if (r2 != null && ship != null) { //checking if bullet and ship are alive
+                if (( r2.getY() > ship.getY() + ship.getFitHeight() // checking condition
+                     && r2.getX() < ship.getX() + ship.getFitWidth() //with bullets from the enemy and the avatar
                      && r2.getX() + r2.getWidth() < ship.getX()
                      && r2.getHeight() + r2.getY() > ship.getY()
                         )) {
-                    removeBullet();
+                    removeBullet(); //removes bullet after killing ship
                     bulletIsAlive = false;
-                    life -= 1;
-                    text.setText("LIFE: " + life);
+                    life -= 1; // player loses life
+                    text.setText("LIFE: " + life); //sets life
                     
                 }
             }
