@@ -63,7 +63,7 @@ public class Aliens {
 
 
 
-    public void movementCore(Bullet bulletc, Text punt, boolean newLevel, Pane pane, ImageView ship) {
+    public void movementCore(Bullet bulletc, Text punt, Pane pane, ImageView ship) {
         if (rightEnemy) { //check if the enemy is going toward right
             if (pointer.getX() + ENEMY_EDGE >= Sprite_BoardW) { //check collision on right edge
                 rightEnemy = false;
